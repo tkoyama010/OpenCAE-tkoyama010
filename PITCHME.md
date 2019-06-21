@@ -28,7 +28,7 @@
 ### GetFEM++とは
 
 - 微分方程式を解く手法の一つ有限要素法を解くフレームワークを提供するライブラリです。
-- Pythonインターフェースが充実しており、Numpy/Scipyのように有限要素法を解くことができます。
+- Numpy/Scipyのarrayオブジェクトを扱うようにFEM関連のオブジェクトを手軽に扱えます。
 ![shape3](http://getfem.org/_images/shape3.png)
 ![shape4](http://getfem.org/_images/shape4.png)
 
@@ -65,7 +65,10 @@ h = 0.1
 # 2次要素を指定してメッシュオブジェクトを作成する
 mesh = gf.Mesh('generate', mo, h, 2)
 ```
+![mesh1](mesh1.png)
 
 +++
 
+### 
 
++++

@@ -197,5 +197,5 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 ### まとめ
 
-- ![ライブラリの説明](http://getfem.org/project/libdesc.html)
-- ![宣伝](https://startpython.connpass.com/event/124252/)
+- [ライブラリの説明](http://getfem.org/project/libdesc.html)
+- [宣伝](https://startpython.connpass.com/event/124252/)

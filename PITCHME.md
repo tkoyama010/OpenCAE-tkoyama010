@@ -31,7 +31,7 @@
 - Pythonインターフェースが充実しており、Numpy/Scipyのように有限要素法を解くことができます。
 ![shape3](http://getfem.org/_images/shape3.png)
 ![shape4](http://getfem.org/_images/shape4.png)
- on \Omega
+
 +++
 
 ### 今回のお題

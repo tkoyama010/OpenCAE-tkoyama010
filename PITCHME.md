@@ -37,8 +37,7 @@
 ### 今回のお題
 
 - [MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)様の問題が面白そうだったのでGetFEM++で解いてみます。
-$$−\Delta u=1 \ {\rm on}\  \Omega$$
-$$ u=0 \ {\rm on}\  \delta \Omega $$
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 ![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
 

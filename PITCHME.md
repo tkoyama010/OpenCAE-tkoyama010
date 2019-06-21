@@ -191,8 +191,6 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 ### 計算結果と理論解の比較
 
-+++
-
 ![error1](error1.png)
 
 +++

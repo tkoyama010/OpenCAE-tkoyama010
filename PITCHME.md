@@ -45,7 +45,7 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 ### Mesherオブジェクトの作成
 
-- Mesherオブジェクトでジオメトリを作成してきます。今回は単位円の問題ですので、中心を(1.0, 1.0)とした半径1.0の円を描きます。
+- Mesherオブジェクトでジオメトリを作成してきます。
 
 
 ```
@@ -53,22 +53,63 @@ import getfem as gf
 mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 ```
 
+![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
+
 +++
 
 ### Meshオブジェクトの作成
 
 - Mesherオブジェクトのジオメトリ情報を基に、メッシュオブジェクトを作成します。
-
 ```
 # メッシュのおおよその長さ
 h = 0.1
 # 2次要素を指定してメッシュオブジェクトを作成する
 mesh = gf.Mesh('generate', mo, h, 2)
 ```
+
 ![mesh1](mesh1.png)
 
 +++
 
-### 
+### メッシュの移動と領域設定
+
+- メッシュの中心位置を(0.0, 0.0)に移動します。
+```
+mesh.translate([-1.0, -1.0])
+```
+- あとで境界条件を設定するための領域も設定します。
+```
+fb = mesh.outer_faces()
+OUTER_BOUND = 1
+mesh.set_region(OUTER_BOUND, fb)
+```
+
+![mesh2](mesh2.png)
+
++++
+
+### MeshFemオブジェクトの作成
+
+- メッシュに有限要素法を割り当てるオブジェクトMeshFEMを作成します。節点の自由度は1とします。
+```
+mfu = gf.MeshFem(mesh, 1)
+```
+- 今回は通常のLagrange要素を使用します。要素次数は2とします。
+```
+elements_degree = 2
+mfu.set_classical_fem(elements_degree)
+```
+![FEM](http://getfem.org/_images/getfemlisttriangleP1.png)
+
++++
+
+### Modelオブジェクトの作成
+
+```
+md = gf.Model('real')
+md.add_fem_variable('u', mfu)
+```
+
+![model](https://camo.githubusercontent.com/e4cfbb7759f0f90b481d1ff465f06290099a46f1/687474703a2f2f67657466656d2e6f72672f5f696d616765732f67657466656d757365726c696e6561727379732e706e67)
 
 +++

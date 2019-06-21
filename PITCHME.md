@@ -121,7 +121,8 @@ md.add_fem_variable('u', mfu)
 ```
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
 ```
-- Modelオブジェクトに微分方程式($−\Delta u=1 \ {\rm on}\  \Omega$)の左辺項を追加します。
+- Modelオブジェクトに微分方程式の左辺項を追加します。
+$$−\Delta u=1 \ {\rm on}\  \Omega$$
 ```
 md.add_Laplacian_brick(mim, 'u')
 ```
@@ -130,7 +131,8 @@ md.add_Laplacian_brick(mim, 'u')
 
 ### 各種条件の設定
 
-- Modelオブジェクトに($−\Delta u=1 \ {\rm on}\  \Omega$)の右辺項を設定します。変数名は'F'とします。
+- Modelオブジェクトに微分方程式の右辺項を設定します。変数名は'F'とします。
+$$−\Delta u=1 \ {\rm on}\  \Omega$$
 ```
 import numpy as np
 md.add_fem_data('F', mfu)

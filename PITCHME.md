@@ -87,3 +87,20 @@ mesh.set_region(OUTER_BOUND, fb)
 ![mesh2](mesh2.png)
 
 +++
+
+### メッシュに有限要素法を割り当てる(MeshFem)オブジェクトの作成
+- メッシュに有限要素法を割り当てるオブジェクトMeshFEMを作成します。
+- 今回は通常のLagrange要素を使用します。節点の自由度は1、要素次数は2とします。
+```
+mfu = gf.MeshFem(mesh, 1)
+
+elements_degree = 2
+mfu.set_classical_fem(elements_degree)
+```
++++
+
+### 連立方程式を管理する(Model)オブジェクトの作成
+
+![model](https://camo.githubusercontent.com/e4cfbb7759f0f90b481d1ff465f06290099a46f1/687474703a2f2f67657466656d2e6f72672f5f696d616765732f67657466656d757365726c696e6561727379732e706e67)
+
++++

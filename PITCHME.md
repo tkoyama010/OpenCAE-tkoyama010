@@ -47,6 +47,7 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 - Mesherオブジェクトでジオメトリを作成してきます。今回は単位円の問題ですので、中心を(1.0, 1.0)とした半径1.0の円を描きます。
 
+
 ```
 import getfem as gf
 mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)

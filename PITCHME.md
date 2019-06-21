@@ -29,6 +29,6 @@
 
 - 微分方程式を解く手法の一つ有限要素法を解くフレームワークを提供するライブラリです。
 - Pythonインターフェースが充実しており、Numpy/Scipyのように有限要素法を解くことができます。
-![tripodvonmiseswithmesh](http://getfem.org/_static/tripodvonmiseswithmesh.png)
+![shape4](http://getfem.org/_images/shape4.png)
 
 +++

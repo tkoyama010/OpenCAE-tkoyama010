@@ -31,13 +31,13 @@
 - Pythonインターフェースが充実しており、Numpy/Scipyのように有限要素法を解くことができます。
 ![shape3](http://getfem.org/_images/shape3.png)
 ![shape4](http://getfem.org/_images/shape4.png)
-
+ on \Omega
 +++
 
 ### 今回のお題
 
-[MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)様の問題が面白そうだったのでGetFEM++で解いてみます。
-$$−\Delta u=1 on \Omega$$
+- [MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)様の問題が面白そうだったのでGetFEM++で解いてみます。
+$$−\Delta u=1$$  on $$\Omega$$
 
 +++
 

@@ -108,7 +108,7 @@ mfu.set_classical_fem(elements_degree)
 ```
 md = gf.Model('real')
 ```
-- MeshFemオブジェクトを使用して変数'u'を追加しｍす。
+- MeshFemオブジェクトを使用して変数'u'を追加します。
 ```
 md.add_fem_variable('u', mfu)
 ```
@@ -121,7 +121,8 @@ md.add_fem_variable('u', mfu)
 ```
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
 ```
-- Modelオブジェクトに微分方程式($−\Delta u=1 \ {\rm on}\  \Omega$)の左辺項を追加します。
+- Modelオブジェクトに微分方程式の左辺項を追加します。
+$$−\Delta u=1 \ {\rm on}\  \Omega$$
 ```
 md.add_Laplacian_brick(mim, 'u')
 ```
@@ -130,7 +131,9 @@ md.add_Laplacian_brick(mim, 'u')
 
 ### 各種条件の設定
 
-- Modelオブジェクトに($−\Delta u=1 \ {\rm on}\  \Omega$)の右辺項を設定します。変数名は'F'とします。
+- Modelオブジェクトに微分方程式の右辺項を設定します。
+$$−\Delta u=1 \ {\rm on}\  \Omega$$
+- 変数名は'F'とします。
 ```
 import numpy as np
 md.add_fem_data('F', mfu)
@@ -139,7 +142,9 @@ md.set_variable('F', np.repeat(1.0, mfu.nbdof()))
 ```
 - 境界部分の条件$u=0$(Dirichlet条件)を設定します。
 ```
-md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER_BOUND)
+md.add_Dirichlet_condition_with_multipliers(
+    mim, 'u', elements_degree - 1, OUTER_BOUND
+)
 ```
 
 +++
@@ -150,8 +155,35 @@ md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER
 ```
 md.solve()
 U = md.variable('u')
+vtkfilename = 'displacement.vtk'
+mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 ```
 
++++
+
+### 未知変数'u'の計算
+
 ![solution1](solution1.png)
+
++++
+
+### 理論解の計算
+- 理論解は次式で表されます。
+$$u(x, y) = \dfrac{1-x^2-y^2}{4}$$
+- 各節点の座標をnumpy.arrayで取得し理論解を計算します。
+```
+xy = mfu.basic_dof_nodes()
+x = xy[0, :]
+y = xy[1, :]
+sol = (1-x*x-y*y)/4.0
+vtkfilename = 'sol.vtk'
+mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
+```
+
++++
+
+### 理論解の計算
+
+![solution2](solution2.png)
 
 +++

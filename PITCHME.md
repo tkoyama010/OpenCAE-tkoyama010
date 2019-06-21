@@ -43,3 +43,10 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 +++
 
+### Mesherオブジェクトの作成
+
+```
+import getfem as gf
+mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
+```
+

@@ -131,8 +131,9 @@ md.add_Laplacian_brick(mim, 'u')
 
 ### 各種条件の設定
 
-- Modelオブジェクトに微分方程式の右辺項を設定します。変数名は'F'とします。
+- Modelオブジェクトに微分方程式の右辺項を設定します。
 $$−\Delta u=1 \ {\rm on}\  \Omega$$
+- 変数名は'F'とします。
 ```
 import numpy as np
 md.add_fem_data('F', mfu)
@@ -141,7 +142,9 @@ md.set_variable('F', np.repeat(1.0, mfu.nbdof()))
 ```
 - 境界部分の条件$u=0$(Dirichlet条件)を設定します。
 ```
-md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER_BOUND)
+md.add_Dirichlet_condition_with_multipliers(
+    mim, 'u', elements_degree - 1, OUTER_BOUND
+)
 ```
 
 +++

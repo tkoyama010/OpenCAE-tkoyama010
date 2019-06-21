@@ -94,22 +94,64 @@ mesh.set_region(OUTER_BOUND, fb)
 ```
 mfu = gf.MeshFem(mesh, 1)
 ```
-- 今回は通常のLagrange要素を使用します。要素次数は2とします。
+- 今回は通常の[Lagrange要素](http://getfem.org/userdoc/appendixA.html#classical-lagrange-elements-on-simplices)を使用します。要素次数は2とします。
 ```
 elements_degree = 2
 mfu.set_classical_fem(elements_degree)
 ```
-![FEM](http://getfem.org/_images/getfemlisttriangleP1.png)
 
 +++
 
-### Modelオブジェクトの作成
+### Modelオブジェクトの作成😫
 
+- 連立方程式で問題を解くための[Modelオブジェクト](http://getfem.org/userdoc/model_object.html)を作成します。
 ```
 md = gf.Model('real')
+```
+- MeshFemオブジェクトを使用して変数'u'を追加しｍす。
+```
 md.add_fem_variable('u', mfu)
 ```
 
-![model](https://camo.githubusercontent.com/e4cfbb7759f0f90b481d1ff465f06290099a46f1/687474703a2f2f67657466656d2e6f72672f5f696d616765732f67657466656d757365726c696e6561727379732e706e67)
++++
+
+### Laplacian_brickの追加
+
+- メッシュに積分法を割り当てるMeshImオブジェクトを作成します。
+```
+mim = gf.MeshIm(mesh, pow(elements_degree,2))
+```
+- Modelオブジェクトに微分方程式($−\Delta u=1 \ {\rm on}\  \Omega$)の左辺項を追加します。
+```
+md.add_Laplacian_brick(mim, 'u')
+```
+
++++
+
+### 各種条件の設定
+
+- Modelオブジェクトに($−\Delta u=1 \ {\rm on}\  \Omega$)の右辺項を設定します。変数名は'F'とします。
+```
+import numpy as np
+md.add_fem_data('F', mfu)
+md.add_source_term_brick(mim, 'u', 'F')
+md.set_variable('F', np.repeat(1.0, mfu.nbdof()))
+```
+- 境界部分の条件$u=0$(Dirichlet条件)を設定します。
+```
+md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER_BOUND)
+```
+
++++
+
+### 未知変数'u'の計算
+
+- Modelオブジェクトが完成しましたので、solveメソッドで未知変数'u'を計算します。
+```
+md.solve()
+U = md.variable('u')
+```
+
+![solution1](solution1.png)
 
 +++

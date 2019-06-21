@@ -58,13 +58,13 @@ mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 ### Meshオブジェクトの作成
 
 - Mesherオブジェクトのジオメトリ情報を基に、メッシュオブジェクトを作成します。
-
 ```
 # メッシュのおおよその長さ
 h = 0.1
 # 2次要素を指定してメッシュオブジェクトを作成する
 mesh = gf.Mesh('generate', mo, h, 2)
 ```
+
 ![mesh1](mesh1.png)
 
 +++
@@ -72,18 +72,16 @@ mesh = gf.Mesh('generate', mo, h, 2)
 ### メッシュの移動と領域設定
 
 - メッシュの中心位置を(0.0, 0.0)に移動します。
-
 ```
 mesh.translate([-1.0, -1.0])
 ```
-
 - あとで境界条件を設定するための領域も設定します。
-
 ```
 fb = mesh.outer_faces()
 OUTER_BOUND = 1
 mesh.set_region(OUTER_BOUND, fb)
 ```
+
 ![mesh2](mesh2.png)
 
 +++

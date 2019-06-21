@@ -100,7 +100,7 @@ elements_degree = 2
 mfu.set_classical_fem(elements_degree)
 ```
 
-+++設定
++++
 
 ### Modelオブジェクトの作成😫
 

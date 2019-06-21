@@ -53,6 +53,8 @@ import getfem as gf
 mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 ```
 
+![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
+
 +++
 
 ### Meshオブジェクトの作成

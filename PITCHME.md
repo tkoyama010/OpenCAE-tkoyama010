@@ -1,4 +1,4 @@
-# 単位円盤上のPoisson方程式をGetFEM++で解いてみた
+# 単位円盤上のポアソン方程式をGetFEM++で解いてみた
 
 [@tkoyama010](https://twitter.com/tkoyama010)
 

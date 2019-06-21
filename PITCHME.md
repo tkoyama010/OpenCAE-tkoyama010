@@ -33,3 +33,11 @@
 ![shape4](http://getfem.org/_images/shape4.png)
 
 +++
+
+### 今回のお題
+
+[MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)様の問題が面白そうだったのでGetFEM++で解いてみます。
+$$−\Delta u=1 on \Omega$$
+
++++
+

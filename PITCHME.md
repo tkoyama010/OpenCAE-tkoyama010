@@ -165,9 +165,9 @@ mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 +++
 
 ### 理論解の計算
-理論解は次式で表されます。
+- 理論解は次式で表されます。
 $$u(x, y) = \dfrac{1-x^2-y^2}{4}$$
-各節点の座標をnumpy.arrayで取得し理論解を計算します。
+- 各節点の座標をnumpy.arrayで取得し理論解を計算します。
 ```
 xy = mfu.basic_dof_nodes()
 x = xy[0, :]

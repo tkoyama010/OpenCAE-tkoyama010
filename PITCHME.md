@@ -108,7 +108,7 @@ mfu.set_classical_fem(elements_degree)
 ```
 md = gf.Model('real')
 ```
-- MeshFemオブジェクトを使用して変数'u'を追加しｍす。
+- MeshFemオブジェクトを使用して変数'u'を追加します。
 ```
 md.add_fem_variable('u', mfu)
 ```
@@ -150,8 +150,35 @@ md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER
 ```
 md.solve()
 U = md.variable('u')
+vtkfilename = 'displacement.vtk'
+mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 ```
 
++++
+
+### 未知変数'u'の計算
+
 ![solution1](solution1.png)
+
++++
+
+### 理論解の計算
+理論解は次式で表されます。
+$$u(x, y) = \dfrac{1-x^2-y^2}{4}$$
+各節点の座標をnumpy.arrayで取得し理論解を計算します。
+```
+xy = mfu.basic_dof_nodes()
+x = xy[0, :]
+y = xy[1, :]
+sol = (1-x*x-y*y)/4.0
+vtkfilename = 'sol.vtk'
+mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
+```
+
++++
+
+### 理論解の計算
+
+![solution2](solution2.png)
 
 +++

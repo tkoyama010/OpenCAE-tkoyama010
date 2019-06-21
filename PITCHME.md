@@ -1,4 +1,6 @@
-# 自己紹介
+# 単位円盤上のPoisson方程式をGetFEM++で解いてみた
+
+[@tkoyama010](https://twitter.com/tkoyama010)
 
 +++
 
@@ -19,6 +21,14 @@
 - 最近はだいぶ内部構造を理解してきたため、GetFEM++にオブジェクトを追加し始めています。
   - 集中質量ブリックオブジェクト(追加済)
   - Houbolt法オブジェクト(テスト中)
-- 😤まずは100コミットが目標です。[コントリビュート状況](https://github.com/tkoyama010/getfem/graphs/contributors)
+- 😤[コントリビュート状況](https://github.com/tkoyama010/getfem/graphs/contributors)まずは100コミットが目標です。
+
++++
+
+### GetFEM++とは
+
+- 微分方程式を解く手法の一つ有限要素法を解くフレームワークを提供するライブラリです。
+- Pythonインターフェースが充実しており、Numpy/Scipyのように有限要素法を解くことができます。
+![tripodvonmiseswithmesh](http://getfem.org/_static/tripodvonmiseswithmesh.png)
 
 +++

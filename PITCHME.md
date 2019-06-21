@@ -197,6 +197,5 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 ### まとめ
 
-+++
-
-![model](http://getfem.org/_images/getfem_structure.png)
+- ![ライブラリの説明](http://getfem.org/project/libdesc.html)
+- ![宣伝](https://startpython.connpass.com/event/124252/)

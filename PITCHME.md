@@ -90,15 +90,16 @@ mesh.set_region(OUTER_BOUND, fb)
 
 ### MeshFemオブジェクトの作成
 
-- メッシュに有限要素法を割り当てるオブジェクトMeshFEMを作成します。
+- メッシュに有限要素法を割り当てるオブジェクトMeshFEMを作成します。節点の自由度は1とします。
 ```
 mfu = gf.MeshFem(mesh, 1)
 ```
-- 今回は通常のLagrange要素を使用します。節点の自由度は1、要素次数は2とします。
+- 今回は通常のLagrange要素を使用します。要素次数は2とします。
 ```
 elements_degree = 2
 mfu.set_classical_fem(elements_degree)
 ```
+![FEM](http://getfem.org/_images/getfemlisttriangleP1.png)
 
 +++
 

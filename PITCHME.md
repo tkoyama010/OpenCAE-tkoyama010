@@ -72,10 +72,13 @@ mesh = gf.Mesh('generate', mo, h, 2)
 ### メッシュの移動と領域設定
 
 - メッシュの中心位置を(0.0, 0.0)に移動します。
+
 ```
 mesh.translate([-1.0, -1.0])
 ```
+
 - あとで境界条件を設定するための領域も設定します。
+
 ```
 fb = mesh.outer_faces()
 OUTER_BOUND = 1

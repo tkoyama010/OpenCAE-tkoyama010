@@ -194,3 +194,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 ![error1](error1.png)
 
 +++
+
+### まとめ
+
+![model](http://getfem.org/_images/getfem_structure.png)

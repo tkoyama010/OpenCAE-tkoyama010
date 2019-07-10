@@ -44,8 +44,6 @@ FEMは微分方程式を解く手法の1つです。
 
 ### 有限要素法(FEM)とは
 
-最終的には連立方程式を作成して未知変数の計算を行います。
-
 ![mesh2](http://getfem.org/_images/getfemuserlinearsys.png)
 
 +++

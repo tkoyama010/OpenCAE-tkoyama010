@@ -145,7 +145,7 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ### Mesherオブジェクトの作成
 
 - Mesherオブジェクトでジオメトリを作成してきます。
-```
+```python
 import getfem as gf
 mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 ```
@@ -157,7 +157,7 @@ mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 ### Meshオブジェクトの作成
 
 - Mesherオブジェクトのジオメトリ情報を基に、メッシュオブジェクトを作成します。
-```
+```python
 # メッシュのおおよその長さ
 h = 0.1
 # 2次要素を指定してメッシュオブジェクトを作成する
@@ -171,11 +171,11 @@ mesh = gf.Mesh('generate', mo, h, 2)
 ### メッシュの移動と領域設定
 
 - メッシュの中心位置を(0.0, 0.0)に移動します。
-```
+```python
 mesh.translate([-1.0, -1.0])
 ```
 - あとで境界条件を設定するための領域も設定します。
-```
+```python
 fb = mesh.outer_faces()
 OUTER_BOUND = 1
 mesh.set_region(OUTER_BOUND, fb)
@@ -188,11 +188,11 @@ mesh.set_region(OUTER_BOUND, fb)
 ### MeshFemオブジェクトの作成
 
 - メッシュに有限要素法を割り当てるオブジェクトMeshFEMを作成します。節点の自由度は1とします。
-```
+```python
 mfu = gf.MeshFem(mesh, 1)
 ```
 - 今回は通常の[Lagrange要素](http://getfem.org/userdoc/appendixA.html#classical-lagrange-elements-on-simplices)を使用します。要素次数は2とします。
-```
+```python
 elements_degree = 2
 mfu.set_classical_fem(elements_degree)
 ```
@@ -202,11 +202,11 @@ mfu.set_classical_fem(elements_degree)
 ### Modelオブジェクトの作成😫
 
 - 連立方程式で問題を解くための[Modelオブジェクト](http://getfem.org/userdoc/model_object.html)を作成します。
-```
+```python
 md = gf.Model('real')
 ```
 - MeshFemオブジェクトを使用して変数'u'を追加します。
-```
+```python
 md.add_fem_variable('u', mfu)
 ```
 
@@ -215,12 +215,12 @@ md.add_fem_variable('u', mfu)
 ### Laplacian_brickの追加
 
 - メッシュに積分法を割り当てるMeshImオブジェクトを作成します。
-```
+```python
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
 ```
 - Modelオブジェクトに微分方程式の左辺項を追加します。
 $$−\Delta u=1 \ {\rm on}\  \Omega$$
-```
+```python
 md.add_Laplacian_brick(mim, 'u')
 ```
 
@@ -231,14 +231,14 @@ md.add_Laplacian_brick(mim, 'u')
 - Modelオブジェクトに微分方程式の右辺項を設定します。
 $$−\Delta u=1 \ {\rm on}\  \Omega$$
 - 変数名は'F'とします。
-```
+```python
 import numpy as np
 md.add_fem_data('F', mfu)
 md.add_source_term_brick(mim, 'u', 'F')
 md.set_variable('F', np.repeat(1.0, mfu.nbdof()))
 ```
 - 境界部分の条件$u=0$(Dirichlet条件)を設定します。
-```
+```python
 md.add_Dirichlet_condition_with_multipliers(
     mim, 'u', elements_degree - 1, OUTER_BOUND
 )
@@ -249,7 +249,7 @@ md.add_Dirichlet_condition_with_multipliers(
 ### 未知変数'u'の計算
 
 - Modelオブジェクトが完成しましたので、solveメソッドで未知変数'u'を計算します。
-```
+```python
 md.solve()
 U = md.variable('u')
 vtkfilename = 'displacement.vtk'
@@ -268,7 +268,7 @@ mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 - 理論解は次式で表されます。
 $$u(x, y) = \dfrac{1-x^2-y^2}{4}$$
 - 各節点の座標をnumpy.arrayで取得し理論解を計算します。
-```
+```python
 xy = mfu.basic_dof_nodes()
 x = xy[0, :]
 y = xy[1, :]

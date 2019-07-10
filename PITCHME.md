@@ -58,6 +58,10 @@
 
 +++
 
+
+
++++
+
 ### リリースノート
 
 [リリースノートバージョン5.3](http://getfem.org/whatsnew/5.3.html) @2018/06/22
@@ -78,17 +82,55 @@
 
 ### インストール方法@Ubuntu
 
+- これだけ！！！
 ```bash
 sudo apt install python-getfem++
 ```
 
-以上！！！
 - これだと話が終わるし中身もわからないということで・・・wgetでソースコードを取得します。
 
 ```bash
 wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
 getfem-5.3.tar.gz
 ```
+
++++
+
+### インストール方法@Ubuntu
+
+- 解凍後フォルダでお決まりの以下のコマンドを実行します。
+```bash
+./configure
+```
+
+- --with-picオプション　64bit版コンパイルのためのオプション
+- --enable-python3=yes python2ではなくpython3を使うというオプション
+
++++
+
+### 使用されるライブラリ
+
+- [QD](https://bitbucket.org/njet/qd-library/src/master/) 特定の人しか使わないから気にするなと表示されます。入れなくてもコンパイルできます。何のライブラリ何だろう・・・
+- [Qhull](http://www.qhull.org/)凹凸の構造計算に使用されるライブラリです。これによりメッシュ生成が可能になります。
+![QhullLogo](http://www.qhull.org/html/qh--cone.gif)
+
++++
+
+### 使用されるライブラリ
+
+- [MUMPS](http://mumps.enseeiht.fr/) 巨大な疎行列を計算するためのソフトウェア。並列計算に使用される。
+- [LAPACK/BLAS](http://www.netlib.org/lapack/) 線形計算のための数値解析ソフトウェアライブラリ
+- [Numpy/Scipy](https://www.scipy.org/) Pythonの数値計算拡張モジュール
+
+- 以上のライブラリをインストールしたら、以下のコマンドでコンパイル・テスト・インストールが行われます。
+```bash
+make && make check && sudo make install
+```
+
++++
+
+### オブジェクトの作成手順
+![getfem_structure1](http://getfem.org/_images/getfem_structure1.png)
 
 +++
 

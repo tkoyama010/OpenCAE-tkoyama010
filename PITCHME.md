@@ -314,8 +314,8 @@ mlab.clf()
 
 ### まとめ
 
-- 有限要素法について
-- GetFEMの内部構造
+- 有限要素法について説明をしました。
+- GetFEMの内部構造について説明をしました。
 - 技術書典7でもGetFEM++のドキュメントの翻訳本を出す予定です。
-- TransifexでGetFEM++のドキュメントとMayaviのドキュメントを翻訳中です。協力していただける方は歓迎いたします。
+- TransifexでGetFEM++のドキュメントとMayaviのドキュメントを[翻訳中](https://www.transifex.com/getfem-doc/)です。協力していただける方は歓迎いたします。
 - 今日の内容はこちらの[JupyterNotebook](https://startpython.connpass.com/event/124252/)で実行したものです。

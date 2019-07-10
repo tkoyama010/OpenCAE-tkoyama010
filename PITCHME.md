@@ -308,7 +308,7 @@ mlab.show()
 mlab.savefig(filename, magnification=2)
 mlab.clf()
 ```
-後は、保存した画像を使って[JupyterNotebook][https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb] 上で画像を表示します。
+後は、保存した画像を使って[JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb) 上で画像を表示します。
 
 +++
 

@@ -308,7 +308,7 @@ mlab.show()
 mlab.savefig(filename, magnification=2)
 mlab.clf()
 ```
-後は、保存した画像を使って[JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb) 上で画像を表示します。
+- 後は、保存した画像を使って[JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb) 上で画像を表示します。
 
 +++
 
@@ -317,5 +317,5 @@ mlab.clf()
 - 有限要素法について
 - GetFEMの内部構造
 - 技術書典7でもGetFEM++のドキュメントの翻訳本を出す予定です。
-- Transifexで
-- [宣伝](https://startpython.connpass.com/event/124252/)
+- TransifexでGetFEM++のドキュメントとMayaviのドキュメントを翻訳中です。協力していただける方は歓迎いたします。
+- 今日の内容はこちらの[JupyterNotebook](https://startpython.connpass.com/event/124252/)で実行したものです。

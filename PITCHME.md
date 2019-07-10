@@ -292,7 +292,30 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
+### MayaviによるJupyterNotebookでの画像の作成
+
+```python
+from mayavi import mlab
+
+filename = 'solutions.png'
+
+mlab.init_notebook()
+vtk_file_reader = mlab.pipeline.open(vtkfilename)
+surface = mlab.pipeline.surface(vtk_file_reader)
+
+mlab.scalarbar(orientation='vertical')
+mlab.show()
+mlab.savefig(filename, magnification=2)
+mlab.clf()
+```
+後は、保存した画像を使って[JupyterNotebook][https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb]上で画像を表示します。
+
++++
+
 ### まとめ
 
-- [ライブラリの説明](http://getfem.org/project/libdesc.html)
+- 有限要素法について
+- GetFEMの内部構造
+- 技術書典7でもGetFEM++のドキュメントの翻訳本を出す予定です。
+- Transifexで
 - [宣伝](https://startpython.connpass.com/event/124252/)

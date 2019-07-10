@@ -129,7 +129,6 @@ make && make check && sudo make install
 
 +++
 
-### オブジェクトの作成手順
 ![getfem_structure1](http://getfem.org/_images/getfem_structure1.png)
 
 +++

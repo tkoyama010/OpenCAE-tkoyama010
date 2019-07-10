@@ -79,12 +79,14 @@
 ### インストール方法@Ubuntu
 
 ```bash
-$ sudo apt install python-getfem++
+sudo apt install python-getfem++
 ```
+
 以上！！！
 - これだと話が終わるし中身もわからないということで・・・wgetでソースコードを取得します。
-```
-$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.3.tar.gz
+
+```bash
+wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.3.tar.gz
 ```
 
 +++

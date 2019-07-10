@@ -60,11 +60,14 @@
 
 ### リリースノート
 
-![リリースノートバージョン5.3 2018/06/22](http://getfem.org/whatsnew/5.3.html)
-![リリースノートバージョン5.2 2017/06/30](http://getfem.org/whatsnew/5.2.html)
-![リリースノートバージョン5.1 2016/08/18](http://getfem.org/whatsnew/5.1.html)
-![リリースノートバージョン5.0 2015/07/29](http://getfem.org/whatsnew/5.0.html)
-![リリースノートバージョン4.3 2014/07/14](http://getfem.org/whatsnew/4.3.html)
+![リリースノートバージョン5.3](http://getfem.org/whatsnew/5.3.html) 2018/06/22
+![リリースノートバージョン5.2](http://getfem.org/whatsnew/5.2.html) 2017/06/30
+![リリースノートバージョン5.1](http://getfem.org/whatsnew/5.1.html) 2016/08/18
+![リリースノートバージョン5.0](http://getfem.org/whatsnew/5.0.html) 2015/07/29
+![リリースノートバージョン4.3](http://getfem.org/whatsnew/4.3.html) 2014/07/14
+
+開発は90年代から行われていますが、後方互換性を維持しながらソースコードのリファクタリングも行われています。
+現在開発版はC++14に対応済みです。
 
 +++
 

@@ -70,8 +70,22 @@
 
 [リリースノートバージョン4.3](http://getfem.org/whatsnew/4.3.html) 2014/07/14
 
-- 開発は90年代から行われていますが、後方互換性を維持しながらソースコードのリファクタリングも行われています。
+- 開発は90年代から行われています。
+- 後方互換性を維持しながらソースコードのリファクタリングも行われています。
 - 現在開発版はC++14に対応済みです。
+
++++
+
+### インストール方法@Ubuntu
+
+```bash
+$ sudo apt install python-getfem++
+```
+以上！！！
+- これだと話が終わるし中身もわからないということで・・・wgetでソースコードを取得します。
+```
+$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.3.tar.gz
+```
 
 +++
 

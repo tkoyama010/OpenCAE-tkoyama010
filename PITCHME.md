@@ -27,3 +27,8 @@
 - GetFEM++のオブジェクト追加&テスト(=>MergeRequest)
 - GetFEM++のPyPIへの登録(=>sharedライブラリは使わない)
 - GetFEM++のsphinxドキュメントの翻訳(=>Transifexで翻訳作業)
+
++++
+
+### Thank you
+初参加でしたが居心地がよく大変楽しめました。

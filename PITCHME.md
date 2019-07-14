@@ -23,8 +23,8 @@
 +++
 
 ### Python mini hack-a-thon 夏山合宿 2019 成果
-- GetFEM++のsphinxドキュメントにHoubolt法を追加(=>MergeRequest)
-- GetFEM++のオブジェクト追加&テスト(=>MergeRequest)
+- GetFEM++のsphinxドキュメントにHoubolt法を追加(=>Merged)
+- GetFEM++のオブジェクト追加&テスト(=>Merged)
 - GetFEM++のPyPIへの登録(=>sharedライブラリは使わない)
 - GetFEM++のsphinxドキュメントの翻訳(=>Transifexで翻訳作業)
 

@@ -26,4 +26,3 @@
 - GetFEM++のsphinxドキュメントにHoubolt法を追加(=>MergeRequest)
 - GetFEM++のオブジェクト追加&テスト(=>MergeRequest)
 - GetFEM++のPyPIへの登録(=>sharedライブラリは使わない)
-- まとめ

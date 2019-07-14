@@ -1,6 +1,6 @@
 # Python mini hack-a-thon 夏山合宿 2019 成果
 
-[@tkoyama010](https://twitter.com/tkoyama010)
+@小山哲央
 
 +++
 

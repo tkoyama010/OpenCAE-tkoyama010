@@ -1,10 +1,10 @@
-# 単位円上のポアソン方程式を解いてみた
+# Solving the Poisson equation on the unit circle
 
 [@tkoyama010](https://twitter.com/tkoyama010)
 
 +++
 
-### お前、誰よ
+### Who are you?
 
 - @tkoyama010: [Twitter](https://twitter.com/tkoyama010), [Booth](https://tkoyama010.booth.pm/)
 - 8年ほど有限要素法のソフトウェアベンダーで土木建築系ソフトの開発と受託解析をしてます。(Fortran, Python, C++, VBScriptなど。)
@@ -14,7 +14,7 @@
 
 +++
 
-### お前、誰よ
+### Who are you?
 
 - 昨年から技術系同人誌イベント[技術書典](https://techbookfest.org/)で[GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B)の翻訳本を頒布しています。
 - 😝一応GetFEM++コミッターですが、雑用でコミット数を稼いできました。(Fix typo, リファクタリング, 翻訳作業etc...)
@@ -25,7 +25,7 @@
 
 +++
 
-### 今日のはなし
+### Agenda
 - 有限要素法とGetFEMの概要
 - インストール方法
 - 例題を使った問題の解き方
@@ -34,7 +34,7 @@
 
 +++
 
-### アンケート
+### Questionnaire
 
 ✋ 「有限要素法」という言葉を聞いたことのある方
 
@@ -42,7 +42,7 @@
 
 +++
 
-### 有限要素法(FEM)とは
+### What is the finite element method (FEM)?
 
 - 物理現象(電気、熱、弾性体etc) の挙動は全て微分方程式で表現することができます。
 - FEMは微分方程式を解く手法の1つです。
@@ -51,13 +51,13 @@
 
 +++
 
-### 有限要素法(FEM)とは
+### What is the finite element method (FEM)?
 
 ![mesh2](http://getfem.org/_images/getfemuserlinearsys.png)
 
 +++
 
-### GetFEM++とは
+### What is GetFEM++?
 
 - 微分方程式を解く手法の一つ有限要素法を解くフレームワークを提供するライブラリです。
 - FEM関連のオブジェクトをPythonで手軽に扱えます。
@@ -67,7 +67,7 @@
 
 +++
 
-### リリースノート
+### Release Notes
 
 [リリースノートバージョン5.3](http://getfem.org/whatsnew/5.3.html) @2018/06/22
 
@@ -85,7 +85,7 @@
 
 +++
 
-### インストール方法@Ubuntu
+### Installation Instructions@Ubuntu
 
 - これだけ！！！
 ```bash
@@ -101,7 +101,7 @@ getfem-5.3.tar.gz
 
 +++
 
-### インストール方法@Ubuntu
+### Installation Instructions@Ubuntu
 
 - 解凍後フォルダでお決まりの以下のコマンドを実行します。
 ```bash
@@ -113,7 +113,7 @@ getfem-5.3.tar.gz
 
 +++
 
-### 使用されるライブラリ
+### Libraries Used
 
 - [QD](https://bitbucket.org/njet/qd-library/src/master/) 特定の人しか使わないから気にするなと表示されます。入れなくてもコンパイルできます。何のライブラリ何だろう・・・
 - [Qhull](http://www.qhull.org/)凹凸の構造計算に使用されるライブラリです。これによりメッシュ生成が可能になります。
@@ -121,7 +121,7 @@ getfem-5.3.tar.gz
 
 +++
 
-### 使用されるライブラリ
+### Libraries Used
 
 - [MUMPS](http://mumps.enseeiht.fr/) 巨大な疎行列を計算するためのソフトウェア。並列計算に使用される。
 - [LAPACK/BLAS](http://www.netlib.org/lapack/) 線形計算のための数値解析ソフトウェアライブラリ
@@ -138,7 +138,7 @@ make && make check && sudo make install
 
 +++
 
-### 今回のお題
+### Topic
 
 - [MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)様の問題を解いてみます。
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
@@ -147,7 +147,7 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 +++
 
-### Mesherオブジェクトの作成
+### Mesher Object
 
 - Mesherオブジェクトでジオメトリを作成してきます。
 ```python
@@ -159,7 +159,7 @@ mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 
 +++
 
-### Meshオブジェクトの作成
+### Mesh object
 
 - Mesherオブジェクトのジオメトリ情報を基に、メッシュオブジェクトを作成します。
 ```python
@@ -173,7 +173,7 @@ mesh = gf.Mesh('generate', mo, h, 2)
 
 +++
 
-### メッシュの移動と領域設定
+### Move and Region Mesh
 
 - メッシュの中心位置を(0.0, 0.0)に移動します。
 ```python
@@ -190,7 +190,7 @@ mesh.set_region(OUTER_BOUND, fb)
 
 +++
 
-### MeshFemオブジェクトの作成
+### Creating a MeshFem Object
 
 - メッシュに有限要素法を割り当てるオブジェクトMeshFEMを作成します。節点の自由度は1とします。
 ```python
@@ -204,7 +204,7 @@ mfu.set_classical_fem(elements_degree)
 
 +++
 
-### Modelオブジェクトの作成😫
+### Model object
 
 - 連立方程式で問題を解くための[Modelオブジェクト](http://getfem.org/userdoc/model_object.html)を作成します。
 ```python
@@ -217,7 +217,7 @@ md.add_fem_variable('u', mfu)
 
 +++
 
-### Laplacian_brickの追加
+### Laplacian_brick
 
 - メッシュに積分法を割り当てるMeshImオブジェクトを作成します。
 ```python
@@ -231,7 +231,7 @@ md.add_Laplacian_brick(mim, 'u')
 
 +++
 
-### 各種条件の設定
+### Setting various conditions
 
 - Modelオブジェクトに微分方程式の右辺項を設定します。
 $$−\Delta u=1 \ {\rm on}\  \Omega$$
@@ -251,7 +251,7 @@ md.add_Dirichlet_condition_with_multipliers(
 
 +++
 
-### 未知変数'u'の計算
+### Calculation of unknown variable 'u'
 
 - Modelオブジェクトが完成しましたので、solveメソッドで未知変数'u'を計算します。
 ```python
@@ -263,13 +263,13 @@ mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 
 +++
 
-### 未知変数'u'の計算
+### Calculation of unknown variable 'u'
 
 ![solution1](solution1.png)
 
 +++
 
-### 理論解の計算
+### theoretical solution
 - 理論解は次式で表されます。
 $$u(x, y) = \dfrac{1-x^2-y^2}{4}$$
 - 各節点の座標をnumpy.arrayで取得し理論解を計算します。
@@ -284,20 +284,20 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
-### 理論解の計算
+### theoretical solution
 
 ![solution2](solution2.png)
 
 
 +++
 
-### 計算結果と理論解の比較
+### Comparison between calculated results and theoretical solutions
 
 ![error1](error1.png)
 
 +++
 
-### MayaviによるJupyterNotebookでの画像の作成
+### Creating an Image with Mayavi
 
 ```python
 from mayavi import mlab
@@ -317,7 +317,7 @@ mlab.clf()
 
 +++
 
-### まとめ
+### Summary
 
 - 有限要素法について説明をしました。
 - GetFEMの内部構造について説明をしました。

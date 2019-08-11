@@ -35,13 +35,13 @@ The mesh is called an element, and the intersection of the mesh sides is called 
 You must specify a finite element method and an integral method for each region of the mesh.
 The finite element method calculates this unknown variable by converting it into a form of simultaneous equations.
 
-# GetFEM++とは
+# GetFEM++
 
-C++で実装された有限要素法ライブラリです。
-Pythonインターフェースがメインで使用されます。
-使用時にはUbuntu上でpython-getfem++パッケージをインストールしてください。
-ちなみにPython3版は対応済みですのでDebianパッケージも間もなく作成されるかと思います。
-オブジェクト指向で実装されているため、オブジェクトを定義しメソッドを呼び出すだけで実行が可能です。
+A finite element library implemented in C++.
+The Python interface is used primarily.
+Install the python-getfem++ package on Ubuntu.
+By the way, since Python 3 version is already supported, Debian package will be created soon.
+Because of its object-oriented implementation, you can simply define an object and call a method to execute it.
 
 # リリースノート
 

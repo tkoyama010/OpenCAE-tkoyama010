@@ -1,7 +1,7 @@
-# 単位円上のポアソン方程式を解いてみた
+# Solving the Poisson equation on the unit circle
 
-はじめまして小山といいます。本日は講演の機会をいただきましてありがとうございます。
-本日は「単位円上のポアソン方程式を解いてみた」というタイトルで発表をさせていただきます。
+Nice to meet you. My name is Koyama. Thank you for giving me the opportunity to speak today.
+Today I'm going to make an announcement under the title of "The Poisson equation on the unit circle is solved.".
 
 # お前、誰よ
 

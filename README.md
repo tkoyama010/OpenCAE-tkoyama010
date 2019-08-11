@@ -16,30 +16,24 @@ Since last year, he has been distributing a translation of the documentation of 
 For example, I've been working on projects for about two years, doing FixTypo, refactoring, translating, and so on. I've learned a lot from just looking at the source code, but recently I wanted to add an object myself, so I added one earlier this year. We are currently adding a second object and hope to finish testing by the end of this month.
 As far as I can see, I have about 50 commits at the moment, so I am aiming for 100 commits.
 
-# アンケート
+# Questionnaire
 
-さて、本日ご紹介するライブラリGetFEM++は有限要素法を解くフレームワークを提供するものです。
-ここで、アンケートをしたいと思います。
-- 「有限要素法」という言葉を一度でも聞いたことのある方。
+Well, this library GetFEM++, provides a framework for solving finite element methods. I would like to do a questionnaire here.
+- If you have ever heard of the word "finite element method".
+Thank you.
+- If you have ever heard of the word "differential equation".
+Thank you. Even if you have heard the word differential equation, I think most of you can eat it by finite element method. It's a short time, but I'd like to explain that part first.
+Thank you in advance.
 
-ありがとうございます。
+# What is the finite element method?
 
-- 「微分方程式」という言葉を一度でも聞いたことのある方。
-
-ありがとうございます。
-微分方程式という言葉を聞いたことのある方はいらっしゃっても、有限要素法なにそれ食べれるのという方がほとんどかと思います。
-短い時間ですが、まずはその部分からご説明していきたいと思います。
-よろしくお願いいたします。
-
-# 有限要素法とは？
-
-物理現象例えば、電気、熱、物体などの挙動は全て微分方程式という方程式で表すことができます。
-有限要素法は微分方程式を解く手法の1つです。
-例えばこちらのように車輪と地面が接触する現象を解くとします。
-その際にはこのようにメッシュと呼ばれる網目状に領域を分割し計算を行います。
-網目の部分を要素、網目の辺の交点部分を節点という名前で呼びます。
-メッシュの各領域には有限要素法と積分法を指定する必要があります。
-これを最終的には連立方程式の形に変換をしてこの未知変数を計算するのが有限要素法です。
+Physical phenomena such as electricity, heat, and the behavior of objects can all be expressed by equations called differential equations.
+The finite element method is a method of solving differential equations.
+For example, let's solve the phenomenon that the wheel touches the ground like this.
+In this way, the area is divided into mesh and the calculation is performed.
+The mesh is called an element, and the intersection of the mesh sides is called a node.
+You must specify a finite element method and an integral method for each region of the mesh.
+The finite element method calculates this unknown variable by converting it into a form of simultaneous equations.
 
 # GetFEM++とは
 

@@ -10,15 +10,11 @@ First of all, who on earth are you? So let me introduce myself. I will explain t
 TwitterID is @tkoyama010. This icon is active under the account name of "Get the finite element method". Please follow me if you like. Also, there is no blog, but Booth distributes technical coterie magazines. I have been developing civil engineering and architectural software and performing commissioned analysis at a CAE software vendor for about 8 years. My work includes programming in Fortran, Python, and C + +, as well as work automation using VBScript. I'm a numerical calculator. When I was a student, I was studying at the earthquake research laboratory of the architecture department.
 At that time, I became interested in programming by studying the simulation of the behavior of structures. I'll post a link to the research paper, so if you're interested, you can access it later through this presentation.
 
-# お前、誰よ
+# Who are you?
 
-昨年から、技術系同人誌イベント技術書典でGetFEM++というOSSライブラリのドキュメントの翻訳本を頒布しています。
-技術書典5からの参加で前回2回目でした。
-一応GetFEM++のプロジェクトの一員でコミッターと名乗っています。がほとんど雑用でコミット数を稼いできました。
-例えば、FixTypoをしたり、リファクタリングをしたり、翻訳作業をしたりとそんなこんなで2年ほどプロジェクトにかかわらせていただいています。
-ソースコードを眺めているだけでもとても勉強になっていますが、最近は自分でもオブジェクトを追加したくなって、今年の前半に1オブジェクトを追加しました。
-現在、2つ目のオブジェクトを追加中で今月中にはテストを終わらせたいと考えています。
-コントリビュート状況を見てみますと現在約50コミットですので、まずは100コミットを目指しています。
+Since last year, he has been distributing a translation of the documentation of the OSS library GetFEM++ in the Technical Doujinshi Event Technical Book. It was the second time since I participated in Technical Book 5. He is part of the GetFEM + + project and calls himself a committer. but I have earned a lot of commits for most of my chores.
+For example, I've been working on projects for about two years, doing FixTypo, refactoring, translating, and so on. I've learned a lot from just looking at the source code, but recently I wanted to add an object myself, so I added one earlier this year. We are currently adding a second object and hope to finish testing by the end of this month.
+As far as I can see, I have about 50 commits at the moment, so I am aiming for 100 commits.
 
 # アンケート
 

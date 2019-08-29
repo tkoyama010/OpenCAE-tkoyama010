@@ -1,4 +1,4 @@
-# Solving the Poisson equation on the unit circle
+# Contribution for GetFEM++ Project
 
 [@tkoyama010](https://twitter.com/tkoyama010)
 
@@ -26,11 +26,12 @@
 +++
 
 ### Agenda
-- 有限要素法とGetFEMの概要
-- インストール方法
-- 例題を使った問題の解き方
-- Mayaviについてちょっと
-- まとめ
+- Object structure of brick
+- Object structure of transient term
+- Adding lumped mass matrix
+- Adding Houbolt method
+- Example
+- Conculution
 
 +++
 

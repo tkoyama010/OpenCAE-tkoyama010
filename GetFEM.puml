@@ -1,4 +1,4 @@
-@startuml{Model.png}
+@startuml{GetFEM.png}
 skinparam dpi 300
 Mesh --o MeshFem
 Fem --o MeshFem

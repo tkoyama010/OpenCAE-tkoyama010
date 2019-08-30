@@ -1,65 +1,47 @@
-# 単位円上のポアソン方程式を解いてみた
+# Solving the Poisson equation on the unit circle
 
-はじめまして小山といいます。本日は講演の機会をいただきましてありがとうございます。
-本日は「単位円上のポアソン方程式を解いてみた」というタイトルで発表をさせていただきます。
+Nice to meet you. My name is Koyama. Thank you for giving me the opportunity to speak today.
+Today I'm going to make an announcement under the title of "The Poisson equation on the unit circle is solved.".
 
-# お前、誰よ
+# Who are you?
 
-まずは、お前一体誰よ。ということで自己紹介をさせていただきます。
-主な活動をご説明いたします。
-TwitterIDは@tkoyama010です。
-こちらのアイコンで「有限要素法を手に入れろ」のアカウント名で活動しています。
-よかったらフォローしてください。
-また、ブログなどはありませんが、Boothで技術系同人誌の頒布をしています。
-8年ほどCAEのソフトウェアベンダーで土木建築系のソフトの開発と受託解析をしています。
-仕事では、FortranやPythonやC++でプログラミングをしたり、VBScriptを使った業務自動化などをしています。
-数値計算系の人です。
-学生時代は建築学科の地震系の研究室で研究をしていました。
-その時に構造物の挙動のシュミレーションの研究を通じてプログラミングに興味を持ちました。
-研究論文のリンクを貼っておきますので、ご興味のある方は後でこちらのプレゼンからアクセスしてみてください。
+TODO: 自己紹介は発表に関係のあるものにとどめる。
+First of all, who on earth are you? So let me introduce myself. I will explain the main activities.
+TwitterID is @tkoyama010. This icon is active under the account name of "Get the finite element method". Please follow me if you like. Also, there is no blog, but Booth distributes technical coterie magazines. I have been developing civil engineering and architectural software and performing commissioned analysis at a CAE software vendor for about 8 years. My work includes programming in Fortran, Python, and C + +, as well as work automation using VBScript. I'm a numerical calculator. When I was a student, I was studying at the earthquake research laboratory of the architecture department.
+At that time, I became interested in programming by studying the simulation of the behavior of structures. I'll post a link to the research paper, so if you're interested, you can access it later through this presentation.
 
-# お前、誰よ
+# Who are you?
 
-昨年から、技術系同人誌イベント技術書典でGetFEM++というOSSライブラリのドキュメントの翻訳本を頒布しています。
-技術書典5からの参加で前回2回目でした。
-一応GetFEM++のプロジェクトの一員でコミッターと名乗っています。がほとんど雑用でコミット数を稼いできました。
-例えば、FixTypoをしたり、リファクタリングをしたり、翻訳作業をしたりとそんなこんなで2年ほどプロジェクトにかかわらせていただいています。
-ソースコードを眺めているだけでもとても勉強になっていますが、最近は自分でもオブジェクトを追加したくなって、今年の前半に1オブジェクトを追加しました。
-現在、2つ目のオブジェクトを追加中で今月中にはテストを終わらせたいと考えています。
-コントリビュート状況を見てみますと現在約50コミットですので、まずは100コミットを目指しています。
+Since last year, he has been distributing a translation of the documentation of the OSS library GetFEM++ in the Technical Doujinshi Event Technical Book. It was the second time since I participated in Technical Book 5. He is part of the GetFEM + + project and calls himself a committer. but I have earned a lot of commits for most of my chores.
+For example, I've been working on projects for about two years, doing FixTypo, refactoring, translating, and so on. I've learned a lot from just looking at the source code, but recently I wanted to add an object myself, so I added one earlier this year. We are currently adding a second object and hope to finish testing by the end of this month.
+As far as I can see, I have about 50 commits at the moment, so I am aiming for 100 commits.
 
-# アンケート
+# Questionnaire
 
-さて、本日ご紹介するライブラリGetFEM++は有限要素法を解くフレームワークを提供するものです。
-ここで、アンケートをしたいと思います。
-- 「有限要素法」という言葉を一度でも聞いたことのある方。
+Well, this library GetFEM++, provides a framework for solving finite element methods. I would like to do a questionnaire here.
+- If you have ever heard of the word "finite element method".
+Thank you.
+- If you have ever heard of the word "differential equation".
+Thank you. Even if you have heard the word differential equation, I think most of you can eat it by finite element method. It's a short time, but I'd like to explain that part first.
+Thank you in advance.
 
-ありがとうございます。
+# What is the finite element method?
 
-- 「微分方程式」という言葉を一度でも聞いたことのある方。
+Physical phenomena such as electricity, heat, and the behavior of objects can all be expressed by equations called differential equations.
+The finite element method is a method of solving differential equations.
+For example, let's solve the phenomenon that the wheel touches the ground like this.
+In this way, the area is divided into mesh and the calculation is performed.
+The mesh is called an element, and the intersection of the mesh sides is called a node.
+You must specify a finite element method and an integral method for each region of the mesh.
+The finite element method calculates this unknown variable by converting it into a form of simultaneous equations.
 
-ありがとうございます。
-微分方程式という言葉を聞いたことのある方はいらっしゃっても、有限要素法なにそれ食べれるのという方がほとんどかと思います。
-短い時間ですが、まずはその部分からご説明していきたいと思います。
-よろしくお願いいたします。
+# GetFEM++
 
-# 有限要素法とは？
-
-物理現象例えば、電気、熱、物体などの挙動は全て微分方程式という方程式で表すことができます。
-有限要素法は微分方程式を解く手法の1つです。
-例えばこちらのように車輪と地面が接触する現象を解くとします。
-その際にはこのようにメッシュと呼ばれる網目状に領域を分割し計算を行います。
-網目の部分を要素、網目の辺の交点部分を節点という名前で呼びます。
-メッシュの各領域には有限要素法と積分法を指定する必要があります。
-これを最終的には連立方程式の形に変換をしてこの未知変数を計算するのが有限要素法です。
-
-# GetFEM++とは
-
-C++で実装された有限要素法ライブラリです。
-Pythonインターフェースがメインで使用されます。
-使用時にはUbuntu上でpython-getfem++パッケージをインストールしてください。
-ちなみにPython3版は対応済みですのでDebianパッケージも間もなく作成されるかと思います。
-オブジェクト指向で実装されているため、オブジェクトを定義しメソッドを呼び出すだけで実行が可能です。
+A finite element library implemented in C++.
+The Python interface is used primarily.
+Install the python-getfem++ package on Ubuntu.
+By the way, since Python 3 version is already supported, Debian package will be created soon.
+Because of its object-oriented implementation, you can simply define an object and call a method to execute it.
 
 # リリースノート
 

@@ -1,7 +1,11 @@
 @startuml{Model.png}
 skinparam dpi 300
-Mesh --* MeshFem
-Fem --* MeshFem
-Mesh --* MeshIm
-Integ --* MeshIm
+Mesh --o MeshFem
+Fem --o MeshFem
+Mesh --o MeshIm
+Integ --o MeshIm
+MeshFem --o Brick
+MeshIm --o Brick
+Brick --o Model
+TimeScheme --o Model
 @enduml

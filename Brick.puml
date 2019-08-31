@@ -1,8 +1,0 @@
-@startuml{Brick.png}
-
-skinparam dpi 300
-class "brick" as brick {
-    asm_real_tangent_terms()
-}
-virtual_brick <|-- brick
-@enduml

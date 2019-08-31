@@ -1,0 +1,8 @@
+@startuml{MassBrick.png}
+
+skinparam dpi 300
+class "mass_brick" as mass_brick {
+    asm_real_tangent_terms()
+}
+virtual_brick <|-- mass_brick
+@enduml

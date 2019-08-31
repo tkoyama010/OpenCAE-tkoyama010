@@ -1,11 +1,11 @@
 @startuml{GetFEM.png}
 skinparam dpi 300
-mesh --o mesh_fem
-fem --o mesh_fem
-mesh --o mesh_im
-integ --o mesh_im
-mesh_fem --o brick
-mesh_im --o brick
-brick --o model
-time_scheme --o model
+mesh        "1"   --o "0.." mesh_fem
+fem         "1"   --o "0.." mesh_fem
+mesh        "1"   --o "0.." mesh_im
+integ       "1"   --o "0.." mesh_im
+mesh_fem    "1"   --o "0.." brick
+mesh_im     "1"   --o "0.." brick
+brick       "0.." --o "1"   model
+time_scheme "0.." --o "1"   model
 @enduml

@@ -1,0 +1,8 @@
+@startuml{LumpedMassBrickForFirstOrder.png}
+
+skinparam dpi 300
+class "lumped_mass_brick_for_first_order" as lumped_mass_brick_for_first_order {
+    asm_real_tangent_terms()
+}
+virtual_brick <|-- lumped_mass_brick_for_first_order
+@enduml

@@ -1,0 +1,11 @@
+@startuml{Newmark_scheme.png}
+
+skinparam dpi 300
+class "Newmark_scheme" as Newmark_scheme {
+    init_affine_dependent_variables()
+    init_affine_dependent_variables_precomputation()
+    time_derivative_to_be_initialized()
+    shift_variables()
+}
+virtual_time_scheme <|-- Newmark_scheme
+@enduml

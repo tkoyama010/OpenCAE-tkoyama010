@@ -43,51 +43,48 @@ Install the python-getfem++ package on Ubuntu.
 By the way, since Python 3 version is already supported, Debian package will be created soon.
 Because of its object-oriented implementation, you can simply define an object and call a method to execute it.
 
-# リリースノート
+# Release Notes
 
-リリースノートには各バージョンの更新情報が載っていますので、見ておくとライブラリ内の開発で今何がホットなのかがわかります。
-このように、各バージョンが1年に1回リリースされています。
-今は、7月ですので、もうしばらくすれば次のバージョンがリリースされるかと思います。
-開発自体は90年代から行われており、後方互換性も維持しながらソースコードのリファクタリングも行われています。
-現在開発版はC++14に対応済みです。
+The release notes contain updates for each version, so you can see what's hot right now for development within the library.
+It is September now, so the next version will be released in a while.。
+The development itself started in the 90s, and the source code is refactored while maintaining backward compatibility.
+The current development version supports C++14.
 
-# インストール方法@Ubuntu
+# Installation Instructions @ Ubuntu
 
-基本的にaptやaptitudeを使えばUbuntuにおいてはインストールはできてしまいます。
-でもそれではつまらないので各種ライブラリを使ってコンパイル&インストールしてみようというのがこのスライドの内容です。
+Basically, if you use apt or aptitude, you can install it on Ubuntu.
+But it's boring, so I'm going to compile and install it with various libraries.
 
-# インストール方法@Ubuntu
+# Installation Instructions @ Ubuntu
 
-ここでお決まりの./configureを使います。
-すると必要なライブラリがインストールされているかの確認が行われます。
-GetFEM のデフォルトのユーザーインターフェースはPython2ですがPython3にオプションで切り替えることも可能です。
-次のスライドで必要なライブラリを説明していきます。
+Use the usual./configure.
+This will verify that the necessary libraries are installed.
+The default user interface for GetFEM is Python 2, but you can optionally switch to Python 3.
+The next slide describes the required libraries.
 
-# インストール方法@Ubuntu
+# Installation Instructions @ Ubuntu
 
-まずは、QDとqhullです。はじめからこんなことを言うのもなんですが、QDは何に使われているのかよくわからないライブラリです。
-メッセージにも特定の人しか使わないから気にするなと書かれています。
-qhullは凹凸の構造計算に使用されるライブラリでこれでメッシュを切ります。
+First, QD and qhull. It's easy to say this from the start, but QD is a library that I'm not sure what it's used for.
+The message also says don't worry because only certain people use it.
+qhull is a library used to compute the convex structure, which cuts the mesh.
 
-# インストール方法@Ubuntu
+# Installation Instructions @ Ubunt
 
-次にMUMPSとLAPACK/BLASとNumpy Scipyです。
-ここいらあたりは有名すぎて説明する必要もないかもしれません。
-libopenblas-dev を使った方が高速になるとのアドバイスをもらいました。
+Then MUMPS, LAPACK/BLAS, and Numpy Scipy.
+This area is so famous that you may not need to explain it.
+Note that libopenblas-dev is faster than pure blas library.
 
-# インストール方法@Ubuntu
+# Installation Instructions @ Ubuntu
 
-ライブラリのインストールは以上になります。
-あとは make && make check && make install でコンパイル・テスト・インストールができます。
-最近気づいたんですけど、make -j8 で並列コンパイルさせると高速になります。
-テストがFAILになったら開発チームにメールしてあげてください。
-
-もしもわからないときは以下のメーリングリストに英語でメールすれば答えてもらえます。
-英語を使いたくなければ私に連絡していただければ可能な限りお答えします。
-ただ以上は #GetFEM の内部も知りつつ使いたい場合であって、有限要素法が使えればよいのであれば。
-aptでインストールされることをおすすめします。
-今はWindows10でも、bashとaptが使えます。
-Python3版はまだパッケージに登録されていませんが、現在申請中です。
+This completes the library installation.
+Then you can do a compile-test install with make & & make check & & make install.
+I recently noticed that parallel compilation with make-j8 is faster.
+If the test is FAIL, please email the development team.
+If you don't know, you can email the following mailing list in English.
+However, if you want to know the inside of GetFEM before using it, and if you can use the finite element method, It is a good idea to compile.
+But if you only want to use it, installing with apt is better.
+Now you can install by apt with Windows 10 wsl.
+The Python 3 version has not yet been registered in the package, but is pending.
 
 # オブジェクトの作成手順
 

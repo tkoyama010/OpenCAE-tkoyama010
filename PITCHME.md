@@ -1,4 +1,4 @@
-# Solving the Poisson equation on the unit circle
+# Introduction to FEM Analysis with Python
 
 [@tkoyama010](https://twitter.com/tkoyama010)
 
@@ -26,26 +26,26 @@
 +++
 
 ### Agenda
-- 有限要素法とGetFEMの概要
-- インストール方法
-- 例題を使った問題の解き方
-- Mayaviについてちょっと
-- まとめ
+- Overview of the Finite Element Method and GetFEM
+- Installation Instructions
+- How to solve problems using examples
+- About Mayavi
+- Summary
 
 +++
 
 ### Questionnaire
 
-✋ 「有限要素法」という言葉を聞いたことのある方
+✋ If you've ever heard of the word "finite element method"
 
-✋ 「微分方程式」という言葉を聞いたことのある方
+✋ If you've ever heard of the word "differential equation"
 
 +++
 
 ### What is the finite element method (FEM)?
 
-- 物理現象(電気、熱、弾性体etc) の挙動は全て微分方程式で表現することができます。
-- FEMは微分方程式を解く手法の1つです。
+- The behavior of all physical phenomena (electrical, thermal, elastic, etc.) can be expressed by differential equations.
+- FEM is a method of solving differential equations.
 
 ![mesh2](mesh2.png)
 
@@ -59,8 +59,8 @@
 
 ### What is GetFEM++?
 
-- 微分方程式を解く手法の一つ有限要素法を解くフレームワークを提供するライブラリです。
-- FEM関連のオブジェクトをPythonで手軽に扱えます。
+- This library provides a framework for solving the finite element method, one of the methods for solving differential equations.
+- FEM is a method of solving differential equations.
 
 ![shape3](http://getfem.org/_images/shape3.png)
 ![shape4](http://getfem.org/_images/shape4.png)
@@ -69,15 +69,15 @@
 
 ### Release Notes
 
-[リリースノートバージョン5.3](http://getfem.org/whatsnew/5.3.html) @2018/06/22
+[Release Notes Version 5.3](http://getfem.org/whatsnew/5.3.html) @2018/06/22
 
-[リリースノートバージョン5.2](http://getfem.org/whatsnew/5.2.html) @2017/06/30
+[Release Notes Version 5.2](http://getfem.org/whatsnew/5.2.html) @2017/06/30
 
-[リリースノートバージョン5.1](http://getfem.org/whatsnew/5.1.html) @2016/08/18
+[Release Notes Version 5.1](http://getfem.org/whatsnew/5.1.html) @2016/08/18
 
-[リリースノートバージョン5.0](http://getfem.org/whatsnew/5.0.html) @2015/07/29
+[Release Notes Version 5.0](http://getfem.org/whatsnew/5.0.html) @2015/07/29
 
-[リリースノートバージョン4.3](http://getfem.org/whatsnew/4.3.html) @2014/07/14
+[Release Notes Version 4.3](http://getfem.org/whatsnew/4.3.html) @2014/07/14
 
 - 開発は90年代から行われています。
 - 後方互換性を維持しながらソースコードのリファクタリングも行われています。
@@ -87,12 +87,12 @@
 
 ### Installation Instructions@Ubuntu
 
-- これだけ！！！
 ```bash
 sudo apt install python-getfem++
 ```
 
-- これだと話が終わるし中身もわからないということで・・・wgetでソースコードを取得します。
+- THAT'S ALL!!
+- This is the end of the story and we don't know what's inside... so I get the source code with wget.
 
 ```bash
 wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
@@ -103,31 +103,31 @@ getfem-5.3.tar.gz
 
 ### Installation Instructions@Ubuntu
 
-- 解凍後フォルダでお決まりの以下のコマンドを実行します。
+- Run the usual commands in the unzipped folder:.
 ```bash
 ./configure
 ```
 
-- --with-picオプション　64bit版コンパイルのためのオプション
-- --enable-python3=yes python2ではなくpython3を使うというオプション
+- --with-pic : options for 64 bit compilation
+- --enable-python3=yes : Option to use python3 instead of python2
 
 +++
 
 ### Libraries Used
 
-- [QD](https://bitbucket.org/njet/qd-library/src/master/) 特定の人しか使わないから気にするなと表示されます。入れなくてもコンパイルできます。何のライブラリ何だろう・・・
-- [Qhull](http://www.qhull.org/)凹凸の構造計算に使用されるライブラリです。これによりメッシュ生成が可能になります。
+- [QD](https://bitbucket.org/njet/qd-library/src/master/) It says don't worry because only certain people use it. You can compile without it. What library, what...
+- [Qhull](http://www.qhull.org/) A library used to compute the structure of convexs. This allows for mesh generation.
 ![QhullLogo](http://www.qhull.org/html/qh--cone.gif)
 
 +++
 
 ### Libraries Used
 
-- [MUMPS](http://mumps.enseeiht.fr/) 巨大な疎行列を計算するためのソフトウェア。並列計算に使用される。
-- [LAPACK/BLAS](http://www.netlib.org/lapack/) 線形計算のための数値解析ソフトウェアライブラリ
-- [Numpy/Scipy](https://www.scipy.org/) Pythonの数値計算拡張モジュール
+- [MUMPS](http://mumps.enseeiht.fr/) Library for computing large sparse matrices. Used for parallel calculation.
+- [LAPACK/BLAS](http://www.netlib.org/lapack/) Numerical Analysis Software Library for Linear Computing
+- [Numpy/Scipy](https://www.scipy.org/) Numerical computation extension for Python
 
-- 以上のライブラリをインストールしたら、以下のコマンドでコンパイル・テスト・インストールが行われます。
+- Once these libraries are installed, a compile test and installation is performed with the following command:.
 ```bash
 make && make check && sudo make install
 ```
@@ -140,7 +140,7 @@ make && make check && sudo make install
 
 ### Topic
 
-- [MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)様の問題を解いてみます。
+- Problem of [MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 ![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
@@ -149,7 +149,7 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 ### Mesher Object
 
-- Mesherオブジェクトでジオメトリを作成してきます。
+- Creates the geometry by Mesher object .
 ```python
 import getfem as gf
 mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)

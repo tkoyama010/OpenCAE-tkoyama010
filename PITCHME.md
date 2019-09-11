@@ -161,11 +161,11 @@ mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 
 ### Mesh object
 
-- Mesherオブジェクトのジオメトリ情報を基に、メッシュオブジェクトを作成します。
+- Creates a mesh object based on the geometry information of the Mesher object.
 ```python
-# メッシュのおおよその長さ
+# Approximate mesh length
 h = 0.1
-# 2次要素を指定してメッシュオブジェクトを作成する
+# Create Mesh Objects with second order elements
 mesh = gf.Mesh('generate', mo, h, 2)
 ```
 
@@ -175,11 +175,11 @@ mesh = gf.Mesh('generate', mo, h, 2)
 
 ### Move and Region Mesh
 
-- メッシュの中心位置を(0.0, 0.0)に移動します。
+- Moves the center position of the mesh to (0.0, 0.0).
 ```python
 mesh.translate([-1.0, -1.0])
 ```
-- あとで境界条件を設定するための領域も設定します。
+- You will also set up an area for setting boundary conditions later.
 ```python
 fb = mesh.outer_faces()
 OUTER_BOUND = 1
@@ -192,11 +192,11 @@ mesh.set_region(OUTER_BOUND, fb)
 
 ### Creating a MeshFem Object
 
-- メッシュに有限要素法を割り当てるオブジェクトMeshFEMを作成します。節点の自由度は1とします。
+- Create the object MeshFEM to assign the finite element method to the mesh. The node has 1 degree of freedom.
 ```python
 mfu = gf.MeshFem(mesh, 1)
 ```
-- 今回は通常の[Lagrange要素](http://getfem.org/userdoc/appendixA.html#classical-lagrange-elements-on-simplices)を使用します。要素次数は2とします。
+- This time use the normal [Lagrange Element](http://getfem.org/userdoc/appendixA.html#classical-lagrange-elements-on-simplices). The element order is be 2.
 ```python
 elements_degree = 2
 mfu.set_classical_fem(elements_degree)
@@ -206,11 +206,11 @@ mfu.set_classical_fem(elements_degree)
 
 ### Model object
 
-- 連立方程式で問題を解くための[Modelオブジェクト](http://getfem.org/userdoc/model_object.html)を作成します。
+- Create a [Model Object](http://getfem.org/userdoc/model_object.html) to solve problems with simultaneous equations.
 ```python
 md = gf.Model('real')
 ```
-- MeshFemオブジェクトを使用して変数'u'を追加します。
+- Add the variable 'u' using the MeshFem object.
 ```python
 md.add_fem_variable('u', mfu)
 ```
@@ -219,11 +219,11 @@ md.add_fem_variable('u', mfu)
 
 ### Laplacian_brick
 
-- メッシュに積分法を割り当てるMeshImオブジェクトを作成します。
+- Creates a MeshIm object that assigns an integral method to the mesh.
 ```python
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
 ```
-- Modelオブジェクトに微分方程式の左辺項を追加します。
+- Adds the left-hand term of a differential equation to a Model object.
 $$−\Delta u=1 \ {\rm on}\  \Omega$$
 ```python
 md.add_Laplacian_brick(mim, 'u')
@@ -233,16 +233,16 @@ md.add_Laplacian_brick(mim, 'u')
 
 ### Setting various conditions
 
-- Modelオブジェクトに微分方程式の右辺項を設定します。
+- Sets the right-hand term of a differential equation to a Model object.
 $$−\Delta u=1 \ {\rm on}\  \Omega$$
-- 変数名は'F'とします。
+- The variable name should be 'F'.
 ```python
 import numpy as np
 md.add_fem_data('F', mfu)
 md.add_source_term_brick(mim, 'u', 'F')
 md.set_variable('F', np.repeat(1.0, mfu.nbdof()))
 ```
-- 境界部分の条件$u=0$(Dirichlet条件)を設定します。
+- Set the boundary condition $u = 0 $(Dirichlet condition).
 ```python
 md.add_Dirichlet_condition_with_multipliers(
     mim, 'u', elements_degree - 1, OUTER_BOUND
@@ -253,7 +253,7 @@ md.add_Dirichlet_condition_with_multipliers(
 
 ### Calculation of unknown variable 'u'
 
-- Modelオブジェクトが完成しましたので、solveメソッドで未知変数'u'を計算します。
+- Now that the Model object is complete, solve computes the unknown variable 'u'.
 ```python
 md.solve()
 U = md.variable('u')
@@ -270,9 +270,9 @@ mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 +++
 
 ### theoretical solution
-- 理論解は次式で表されます。
+- The theoretical solution is given by.
 $$u(x, y) = \dfrac{1-x^2-y^2}{4}$$
-- 各節点の座標をnumpy.arrayで取得し理論解を計算します。
+- The coordinates of each node are obtained by numpy.array and the theoretical solution is calculated.
 ```python
 xy = mfu.basic_dof_nodes()
 x = xy[0, :]
@@ -313,15 +313,16 @@ mlab.show()
 mlab.savefig(filename, magnification=2)
 mlab.clf()
 ```
-- 後は、保存した画像を使って[JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb) 上で画像を表示します。
+- Then use the saved image to display the image on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
 
 +++
 
 ### Summary
 
-- 有限要素法について説明をしました。
-- GetFEMの内部構造について説明をしました。
-- TransifexでGetFEM++のドキュメントとMayaviのドキュメントを[翻訳中](https://www.transifex.com/getfem-doc/)です。協力していただける方は歓迎いたします。
-- 技術書典7でもGetFEM++のドキュメントの翻訳本を出す予定です。
-- Mayaviのドキュメントを翻訳したものは[こちら](https://mayavi-ja.readthedocs.io/ja/latest/)で公開中です。
+- I explained the finite element method.
+- We have described the internal structure of GetFEM
+- GetFEM++ and Mayavi documentation on Transifex [Translating](https://www.transifex.com/getfem-doc/). We welcome your cooperation.
+- We plan to publish a translation of the GetFEM + + documentation in Technical Document 7.
+- A translation of the Mayavi documentation is available at [Here.] (https://mayavi-ja.readthedocs.io/ja/latest/).
 - 今日の内容はこちらの[JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb)で実行したものです。
+- Today's exercise was performed here on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).

@@ -136,16 +136,7 @@ To do so, create mesh objects by importing meshes created with other meshing sof
 
 # Creating a MeshFEM Object
 
-次に、Meshに有限要素法を割り当てる、MeshFEMオブジェクトを作成します。
-オブジェクトを定義する際には前のスライドで定義した、meshオブジェクトとメッシュの交点(節点といいます。)の次元が必要です。
-今回の問題では、節点の次元は1となりますので、1を設定します。
-次にメッシュに有限要素法を割り当てます。
-今回は、通常よく使われるLagrange要素を使用します。
-メソッドはset_calssical_femを使用します。
-その際には、要素次数を設定する必要があります。
-先程メッシュの次数を2としていますので有限要素法の次数も2とします。
-今回は、デフォルトの有限要素法を使用しましたが、GetFEM++では他の種類の有限要素法を使用することもできます。
-こちらのページにありますように様々な手法が揃っていますので、ご興味のある方は後でご覧ください。
+Next, you will create a MeshFEM object that assigns the finite element method to the Mesh. When defining the object, you need the dimension defined in the previous slide for the intersection of the mesh object and the mesh (They are called nodes.). In this case, the node has a dimension of 1, so set it to 1. Then assign the finite element method to the mesh. This time, we'll use the commonly used Lagrange element. The method uses set _ calsical _ fem. You must set the element order. Since we have set the mesh order to 2, let's also set the finite element method order to 2. We used the default finite element method, but GetFEM + + allows you to use other kinds of finite element methods. As you can see on this page, there are various methods, so if you are interested, please see them later.
 
 # Create a Model object
 

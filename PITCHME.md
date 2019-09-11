@@ -324,5 +324,4 @@ mlab.clf()
 - GetFEM++ and Mayavi documentation on Transifex [Translating](https://www.transifex.com/getfem-doc/). We welcome your cooperation.
 - We plan to publish a translation of the GetFEM + + documentation in Technical Document 7.
 - A translation of the Mayavi documentation is available at [Here.] (https://mayavi-ja.readthedocs.io/ja/latest/).
-- 今日の内容はこちらの[JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb)で実行したものです。
 - Today's exercise was performed here on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).

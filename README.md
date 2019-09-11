@@ -5,7 +5,6 @@ Today I'm going to make an announcement under the title of "The Poisson equation
 
 # Who are you?
 
-TODO: 自己紹介は発表に関係のあるものにとどめる。
 First of all, who on earth are you? So let me introduce myself. I will explain the main activities.
 TwitterID is @tkoyama010. This icon is active under the account name of "Get the finite element method". Please follow me if you like. Also, there is no blog, but Booth distributes technical coterie magazines. I have been developing civil engineering and architectural software and performing commissioned analysis at a CAE software vendor for about 8 years. My work includes programming in Fortran, Python, and C + +, as well as work automation using VBScript. I'm a numerical calculator. When I was a student, I was studying at the earthquake research laboratory of the architecture department.
 At that time, I became interested in programming by studying the simulation of the behavior of structures. I'll post a link to the research paper, so if you're interested, you can access it later through this presentation.

@@ -86,55 +86,55 @@ But if you only want to use it, installing with apt is better.
 Now you can install by apt with Windows 10 wsl.
 The Python 3 version has not yet been registered in the package, but is pending.
 
-# オブジェクトの作成手順
+# To create an object
 
-こちらにオブジェクトの作成の流れを示します。
-まずはじめに、Mesherオブジェクトで幾何学的にどのような形も問題を解くかを指定します。
-次に、Mesherオブジェクトを基に先程説明したMeshオブジェクトを作成します。
-Meshオブジェクトの各メッシュに対し有限要素法と積分法をそれぞれ定義することにより、MeshFemオブジェクトとMeshImオブジェクトを作成します。
-最後に、MeshFemオブジェクトとMeshImオブジェクトをModelオブジェクトに設定することによりオブジェクトが完成します。
+Here is the flow of object creation.
+First, you specify which geometries of the Mesher object solve the problem.
+Next, you'll create the Mesh object described above, based on the Mesher object.
+Create the MeshFem and MeshIm objects by defining the finite element and integral methods for each mesh in the Mesh object, respectively.
+Finally, you populate the Model object with MeshFem and MeshIm objects to complete the object.
 
-# 今回のお題
+# This time's topic
 
-今回はMathWork様の問題を解くことにします。
-こちらに示すように、半径1.0の円があり、その円の中でこちらに示すような微分方程式が成り立っているとします。
-また、円の境界部分では、(ディリクレ条件というのですけども。)、変数uが0であるとします。
+This time, I will solve the MathWork problem.
+Let's say you have a circle with a radius of 1.0 as shown here, and within that circle you have a differential equation like this one.
+Also assume that the variable u is 0 at the boundary of the circle (It's called Dirichlet condition.).
 
-# Mesherオブジェクトの作成
+# Creating the Mesher Object
 
-それでは、先程の流れにしたがってまずはMesherオブジェクトを作成するところからはじめます。
+Let's start by creating a Mesher object.
 
-# Mesherオブジェクトの作成
+# Creating the Mesher Object
 
-まずはじめにgetfemをインポートします。
-次に、MesherObject関数で引数に円を表す、'ball'と中央の座標(1.0, 1.0)、及び、半径1.0を指定し、2次元の円を作成します。
-この図の通りにするならば、中央の座標は(0.0, 0.0)とするのが適切ですが、MesherObjectは負の値を設定できません。
-そこで、メッシュを中央(1.0, 1.0)の部分で作っておき、後で中央の座標を(0.0, 0.0)の位置に修正することにします。
+First, import getfem.
+Then use the MeserObject function with the arguments' ball ', the center coordinate (1.0, 1.0), and a radius of 1.0 to create a 2-dimensional circle.
+As you can see, the center coordinate should be (0.0, 0.0), but MeserObject cannot be negative.
+So we'll build the mesh in the center (1.0, 1.0) and later modify the center coordinates to the (0.0, 0.0) location.
 
-# Mesh オブジェクトの作成
+# Create a Mesh object
 
-次に、MesherオブジェクトからMeshオブジェクトを作成します。
-まずは、メッシュのおおよその長さhを設定します。
-ここでは、MathWork様のページを参考に0.5を設定します。
-次に、Mesh関数でMeshオブジェクトを作成します。
-引数は'generate'を指定し、先程作成したMesherオブジェクトmoとhを指定します。
-更に最後に要素の次数と呼ばれるものを2に指定します。
+Next, create a Mesh object from the Mesher object.
+First, set the approximate length h of the mesh.
+In this case, we set 0.5 referring to MathWork's page.
+Then use the Mesh function to create a Mesh object.
+The arguments are 'generate' and the Mesher objects mo and h that you just created.
+Finally, we set the element order to 2.
 
-# メッシュの移動と領域設定
+# Move Mesh and Set Region
 
-これにより作成されたメッシオブジェクトの中心は先程説明したように(1.0, 1.0)にあります。
-そこで、translateメソッドを使用してメッシュの位置を(0.0, 0.0)に移動します。
-更に、メッシュオブジェクトに対し境界も設定しておきます。
-円の境界は'u'の値が0.0になる条件とするため、その部分を境界として設定する必要がございます。
-境界の設定にはset_regionメソッドを使用します。
-1つ目の引数が境界の番号、2つ目の引数が境界の面番号です。
-境界の面番号を覚えておくのは大変ですので、この境界番号をOUTER_BOUNDと変数に置き換えておきます。
-また、2つ目の引数fbとして使用される円の境界の面番号(この場合2次元なので線ですが)はouter_facesというメソッドで取得することができます。
-以上でメッシュオブジェクトの作成ができました、今回作成したのはとても簡単な形のメッシュでした。
-通常、実務で使われるメッシュはより複雑なものになります。
-その場合は、他のメッシュ作成ソフトで作成したメッシュをインポートしてメッシュオブジェクトを作成します。
+The center of the resulting mesh object is in (1.0, 1.0), as described earlier.
+Use the translate method to move the mesh into position (0.0, 0.0).
+Also set boundaries for mesh objects.
+The boundary of the circle must be set at the part where the value of 'u' is 0.0.
+Use the set _ region method to set the boundary.
+The first argument is the number of the boundary and the second argument is the face number of the boundary.
+Since it is difficult to remember the boundary face numbers, we will replace them with OUTER _ BOUND and the variable.
+You can also get the face number (In this case, it's a line because it's two-dimensional.) of the circle boundary used as the second argument fb in a method called outer _ faces.
+Now that you have a mesh object, this time you have a very simple mesh shape.
+Typically, meshes used in production are more complex.
+To do so, create mesh objects by importing meshes created with other meshing software.
 
-# MeshFEMオブジェクトの作成
+# Creating a MeshFEM Object
 
 次に、Meshに有限要素法を割り当てる、MeshFEMオブジェクトを作成します。
 オブジェクトを定義する際には前のスライドで定義した、meshオブジェクトとメッシュの交点(節点といいます。)の次元が必要です。
@@ -147,102 +147,101 @@ Meshオブジェクトの各メッシュに対し有限要素法と積分法を�
 今回は、デフォルトの有限要素法を使用しましたが、GetFEM++では他の種類の有限要素法を使用することもできます。
 こちらのページにありますように様々な手法が揃っていますので、ご興味のある方は後でご覧ください。
 
-# Modelオブジェクトの作成
+# Create a Model object
 
-ここまでの説明ですでに心が折れている方もいらっしゃるかもしれませんが、ここまでで半分です。もうしばらくお付き合いください。
-最後に、Modelオブジェクトを作成します。
-このオブジェクトは連立方程式を解くための変数と微分方程式の項を管理するオブジェクトです。
-今回は、実数のModelオブジェクトとして変数mdを定義します。
-次にmdのメソッドadd_fem_variableを使用して変数を定義します。
-必要な引数は変数名と対応するMeshFemオブジェクトです。
-今回は式の表現に習って変数名は'u'とし、MeshFemオブジェクトは先程作成したmfuを使用します。
+Some of you may already be disappointed with the explanation so far, but it's half done. Please keep in touch with me for a while.
+Finally, create a Model object.
+This object manages variables and differential equation terms for solving simultaneous equations.
+This time, define the variable md as a real Model object.
+You then use the md method add _ fem _ variable to define the variable.
+The required arguments are the variable name and the corresponding MeshFem object.
+This time, use the expression to name the variable 'u', and the MeshFem object uses the mfu you just created.
 
-# Laplacian_brickの追加
+# Adding Laplacian brick
 
-次にModelオブジェクトに微分方程式の項を追加してきます。
-まずは微分方程式のこちらの左辺の項を追加します。
-この項は数学的にはLaplacianと呼ばれています。
-項を追加する際にはモデルオブジェクトのadd_Laplacian_brickというメソッドを使用します。
-必要な引数はMeshImオブジェクトと、項を追加する変数です。
-MeshImオブジェクトは積分法をメッシュに割り当てるためのオブジェクトです。
-MeshIm関数で定義します。
-引数にはmeshオブジェクトと積分法の次数が必要です。
-meshオブジェクトはMeshFEMオブジェクトと同じもの、次数は要素の次数の2乗を定義します。
+Next, add a term for the differential equation to the Model object.
+First, add this left-hand term of the differential equation.
+This term is mathematically called Laplacian.
+You use the model object's add _ Laplacian _ brick method to add terms.
+The required arguments are a MeshIm object and a variable to add the term to.
+The MeshIm object is used to assign the integration method to a mesh.
+It is defined by the MeshIm function.
+The argument must contain a mesh object and the order of the integration method.
+The mesh object is identical to the MeshFEM object, and the degree defines the square of the element's degree.
 
-# 右辺項と境界条件の設定
+# Setting Right-Edge Terms and Boundary Conditions
 
-次にModelオブジェクトに微分方程式の右辺項を設定します。
-ここでは、この1の値を変数名'F'で定義します。
-左辺項を定義した際にはadd_fem_variableメソッドを使用していましたが、右辺項を指定する場合にはset_fem_dataメソッドを使用します。
-variableメソッドのときと同様に変数名とMeshFEMオブジェクトを指定します。
-その上で、add_source_term_brickメソッドでソース項'F'を、変数'u'に対して与えます。
-ソース項'F'は問題を解く前から既にわかっている値ですので、値1.0を設定する必要があります。
-変数に値を設定する際にはset_variableメソッドを使用して値1.0のベクトルを設定します。
-最後に境界部分のu=0の条件を設定します。
-これはDirichlet条件と呼ばれており、add_Dirichlet_condition_with_multipliersメソッドを使用します。
-引数はそれぞれ、MeshImオブジェクトのmimと先程追加した変数'u'、Dirichlet条件の係数として使用される値(これは通常要素次数から1を引いたものです。)
-さらに、先程Meshオブジェクト作成の際に指定した領域番号OUTER_BOUNDを指定します。
+Then we set the right-hand term of the differential equation on the Model object.
+We define the value of 1 with the variable name 'F'.
+The add _ fem _ variable method was used to define the left term, but the set _ fem _ data method is used to specify the right term.
+Specify the variable name and the MeshFEM object as you did for the variable method.
+Then the add _ source _ term _ brick method gives the source term 'F' to the variable 'u'.
+Since the source term 'F' is a known value before solving the problem, a value of 1.0 is required.
+When you set the value of a variable, you use the set _ variable method to set a vector with a value of 1.0.
+Finally, set the u = 0 condition for the boundary.
+This is called a Dirichlet condition and uses the add _ Dirichlet _ condition _ with _ multipliers method.
+The arguments are respectively the mim of the MeshIm object, the variable 'u' added earlier, and the value to be used as the coefficient in the Dirichlet condition (This is usually the element order minus 1.).
+It also specifies the area number OUTER _ BOUND that you specified when you created the Mesh object.
 
-# 未知変数'u'の計算
+# Calculate unknown variable 'u'
 
-長くなりましたが、以上でModelオブジェクトを完成させることができました。
-問題を解く際にはModelオブジェクトのsolveメソッドを呼び出すことにより問題を解くことができます。
-解いた後はvariableメソッドで変数名を指定してnumpy.arrayの型の変数データを取得することができます。
-この結果を表示する際には前のご発表で紹介されていたMayaviでの結果表示が推奨されています。
-その際にはMeshFemのvtk出力機能を使用します。
-使用するメソッドはexport_to_vtkです。
-vtkのファイル名とMeshFemオブジェクト、取得した変数'U'、とvtkファイルに出力する変数名を指定します。
+Now you have a complete Model object.
+You can solve the problem by calling the solve method of the Model object.
+You can then use the variable method to retrieve variable data of type nompy.array.
+We recommend that you view the results in Mayavi, as introduced in the previous announcement.
+Use MeshFem's vtk output to do this.
+The method to use is export _ to _ vtk.
+Specify the vtk filename and MeshFem object, the retrieved variable 'U', and the variable name to output to the vtk file.
 
-# 未知変数'u'の計算
+# Calculation of unknown variable 'u'
 
-出力したvtkファイルをMayaviで表示させた結果がこちらです。
-ご覧のように中央から同心円状に値が分布していることが分かります。
+This is the result of viewing the output vtk file in Mayavi.
+As you can see, the values are distributed concentrically from the center.
 
-# 理論解の計算
+# calculation of the theoretical solution
 
-この問題の理論解はこちらのように表されます。
-この理論解との比較をすることで今回計算した結果が妥当であるかを確認しようと思います。
-まずはじめに、各節点の座標をnumpy.arrayで取得します。
-MeshFemオブジェクトのbasic_dof_nodesメソッドで各節点の座標をnumpy.arrayで取得することができます。
-座標が分かりましたので、これを基に理論解を計算しvtkファイルに出力して比較してみます。
+The theoretical solution to this problem is shown here.
+By comparing with this theoretical solution, I would like to confirm the validity of the result calculated this time.
+First, we get the coordinates of each node in nompy.array.
+You can use the basic _ dof _ nodes method of the MeshFem object to get the coordinates of each node in nompy.array.
+Now that we know the coordinates, we can calculate the theoretical solution and output it to a vtk file for comparison.
 
-# 理論解の計算
+# calculation of the theoretical solution
 
-先程の結果と同様に同心円状に値が分布していることが分かります。
+You can see that the values are distributed concentrically, similar to the previous result.
 
-# 計算結果と理論解の比較
-計算した結果と理論解を比較してみます。
-その結果、最も誤差が大きい部分でもその差は10^-6のオーダーであることが分かります。
+# Comparison between calculated results and theoretical solutions
+Compare the calculated results with the theoretical solution.
+As a result, even the largest margin of error is 10^-6.
 
-# MayaviによるJupyterNotebookでの画像の作成
+# Creating an Image on JupyterNotebook by Mayavi
 
-さて、まだ時間がありますので、こちらの図をMayaviでどのように作成したかご説明しておきます。
-こちらは、MayaviをJupyter上で動かして画像を作成しています。
-まず、mayaviからmlabをimportします。
-次に、init_notebook()メソッドでmlabの情報を初期化します。
-初期化終了後、mlab.pipleline.open()メソッドでvtkファイルを表示させます。
-その上で、mlab.pipeline.surfaceという関数を使うと表面のコンターが表示されます。
-scalarbar、show、savefigそれぞれのメソッドを使って先程のような図を表示させ画像を保存することができます。
-Mayaviでvtkファイルの結果を表示させる方法はなかなか見つかりませんでしたので、ご参考に慣れば幸いです。
+Now, I have time to explain how I created this diagram in Mayavi.
+Here's Mayavi running on Jupyter to create an image.
+First, import mlab from mayavi.
+Next, the init_notebook () method initializes the mlab information.
+After initialization, the mlab.pipleline.open () method displays the vtk file.
+Then use a function called mlab.pipeline.surface to display the contours of the surface.
+You can use the scalarbar, show, and savefig methods to display the above diagram and save the image.
+It was hard to find a way to view the results of a vtk file in Mayavi, so I hope you're familiar with it.
 
-# まとめ
+# Summary
 
-私の発表は以上になりますので、最後にまとめをさせていただきます。
-まずはじめに有限要素法とはどのようなものかについて簡単に紹介させていただきました。
-この手法は空間をメッシュで分割することによりそのメッシュ空間上の微分方程式を解く手法です。
-次に、GetFEMの内部構造について簡単に説明しました。
-まずはじめにMesherオブジェクトを作成し、それを基にMeshオブジェクトを作成します。
-Meshオブジェクトを作成したら、それを基にメッシュに有限要素法を割り当てるMeshFemオブジェクトと積分法を割り当てるMeshImオブジェクトを作成します。
-最後にMeshFemオブジェクトとMeshImオブジェクトを使ってModelオブジェクトに微分方程式と境界条件を構築していきます。
-構築が終了した後は、solveメソッドを使用して未知変数を計算し、real_variableで変数の値を取得します。
-MeshFEMのメソッドで結果を出力しMayaviで結果をプロットすることが可能です。
-最後に宣伝をさせていただきます。
-このような解析の例が載った技術系同人誌を頒布中です。
-内容は、公式の英語のチュートリアルを日本語に翻訳したものになっております。
-ご興味のある方はこちらも読んでみてください。
-また、同人誌の翻訳の際にはTransifexというサイトで翻訳をしております。
-翻訳活動への参加いただける方は歓迎いたしますので、ご連絡ください。
-また、同じプロジェクト内でMayaviの日本語訳のプロジェクトも進めています。
-こちらは、Mayaviの開発者の方からGitHubで了解をいただきまして翻訳を進めています。
-こちらもよろしくお願いいたします。
-以上、ご清聴ありがとうございました。
+That's all for my presentation, so let me summarize it at the end.
+First of all, I briefly introduced what the finite element method is.
+This method solves a differential equation on a mesh space by dividing the space with a mesh.
+Next, we briefly described the internal structure of GetFEM.
+First, you will create a Mesher object and use it to create a Mesh object.
+After you create a Mesh object, you create a MeshFem object that assigns a finite element method to the mesh and a MeshIm object that assigns an integration method to the mesh.
+Finally, you use the MeshFem and MeshIm objects to build differential equations and boundary conditions on the Model object.
+After the build is finished, use the solve method to calculate the unknown variable and real _ variable to get the value of the variable.
+MeshFEM methods can output results and Mayavi can plot them.
+Finally, let me make an advertisement.
+We are distributing technical coterie magazines with examples of such analyses.
+The content is an official English tutorial translated into Japanese.
+Please read this if you are interested.
+Also, when we translate Doujinshi, we do it on a website called Transfex.
+If you would like to participate in translation activities, please contact us.
+We are also working on a Japanese translation of Mayavi within the same project.
+We are working on the translation with the permission of the Mayavi developers on GitHub.
+Thank you for your attention.

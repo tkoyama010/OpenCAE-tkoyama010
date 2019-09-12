@@ -52,13 +52,13 @@
 
 +++
 
-### What is the finite element method (FEM)?
+### 🤔 What is PED and FEM?
 
 ![mesh2](http://getfem.org/_images/getfemuserlinearsys.png)
 
 +++
 
-### What is GetFEM++?
+### 👨‍💻What is GetFEM++?
 
 - This library provides a framework for solving the finite element method, one of the methods for solving differential equations.
 - FEM is a method of solving differential equations.

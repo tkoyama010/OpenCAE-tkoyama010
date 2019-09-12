@@ -1,13 +1,5 @@
 ---
-### フォントサイズ
----
-@size[2.5em](こんな感じ)に、  
-フォントのサイズを  
-自由に変更できるようになりました。
----
-書き方は、**『@size\[2.5em\](こんな感じ)』** です。
----
-# @size\[10em\].(Introduction to FEM Analysis with Python)
+# @size[2.5em](Introduction to FEM Analysis with Python)
 
 [@tkoyama010](https://twitter.com/tkoyama010)
 

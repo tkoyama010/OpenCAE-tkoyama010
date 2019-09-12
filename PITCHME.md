@@ -1,5 +1,5 @@
 ---
-# @size[2.5em](Introduction to FEM Analysis with Python)
+@size[2.5em](Introduction to FEM Analysis with Python)
 
 [@tkoyama010](https://twitter.com/tkoyama010)
 

@@ -37,13 +37,13 @@
 
 ### Questionnaire
 
-✋ I KNOW "finite element method"
+✋ I KNOW "partial differential equations (PDE)"
 
-✋ I KNOW "differential equation"
+✋ I KNOW "finite element method (FEM)"
 
 +++
 
-### What is the finite element method (FEM)?
+### 🤔 What is PED? 🤔 What is FEM?
 
 - The behavior of all physical phenomena (electrical, thermal, elastic, etc.) can be expressed by differential equations.
 - FEM is a method of solving differential equations.

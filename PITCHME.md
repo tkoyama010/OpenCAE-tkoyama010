@@ -27,11 +27,15 @@
 +++
 
 ### Agenda
-- Overview of the Finite Element Method and GetFEM
-- Installation Instructions
-- How to solve problems using examples
-- About Mayavi
-- Summary
+✅ Overview of the Finite Element Method and GetFEM
+
+✅ Installation Instructions
+
+✅ How to solve problems using examples
+
+✅ About Mayavi
+
+✅ Summary
 
 +++
 

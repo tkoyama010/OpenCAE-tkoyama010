@@ -37,9 +37,9 @@
 
 ### Questionnaire
 
-✋ If you've ever heard of the word "finite element method"
+✋ I KNOW "finite element method"
 
-✋ If you've ever heard of the word "differential equation"
+✋ I KNOW "differential equation"
 
 +++
 

@@ -101,11 +101,6 @@ $ sudo apt install python-getfem++
 
 @size[2.0em](😆) Let's install from source code to study❗
 
-```
-$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
-getfem-5.3.tar.gz
-```
-
 +++
 
 ### 🔰Installation Instructions@Ubuntu

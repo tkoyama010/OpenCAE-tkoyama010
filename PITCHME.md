@@ -220,7 +220,7 @@ md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER
 
 +++
 
-### 🏃 Solve 'u'
+### 🏃 Solve ***u***
 
 - Now that the Model object is complete, solve computes the unknown variable 'u'.
 ```python
@@ -232,7 +232,7 @@ mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 
 +++
 
-### 🏅 Calculation of unknown variable 'u'
+### 🎉 variable ***u***
 
 ![solution1](solution1.png)
 

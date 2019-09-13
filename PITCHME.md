@@ -5,7 +5,7 @@
 
 +++
 
-### Who are you?
+### Who are you? 👀
 
 - @tkoyama010: [Twitter](https://twitter.com/tkoyama010), [Booth](https://tkoyama010.booth.pm/)
 - Fortran, Python, C++, VBScript etc
@@ -13,7 +13,7 @@
 
 +++
 
-### Who are you?
+### Who are you? 👀
 
 - Since last year, I have been distributing translated books of [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B) in the event technical book of [techbookfest](https://techbookfest.org/).
 - 😝I'm a GetFEM + + committer, but I've been earning commits for odd jobs. (Fix types, refactoring, translation tasks, etc.)

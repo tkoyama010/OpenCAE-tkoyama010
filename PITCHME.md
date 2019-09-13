@@ -105,6 +105,9 @@ $ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.3
 - Run ***./configure***
   - --with-pic 💡 options for 64 bit compilation
   - --enable-python3=yes 💡 option to use python3
+```bash
+$ ./configure --with-pic --enable-python3=yes
+```
 
 +++
 

@@ -115,19 +115,18 @@ getfem-5.3.tar.gz***
 
 ### 📗 Using Library
 
-- 🔖 [QD](https://bitbucket.org/njet/qd-library/src/master/) It says don't worry because only certain people use it. You can compile without it. What library, what?
-- 🔖 [Qhull](http://www.qhull.org/) A library used to compute the structure of convexs. This allows for mesh generation.
+- 🔖 [Qhull](http://www.qhull.org/) 💡 A library used to compute the structure of convexs. This allows for mesh generation.
 ![QhullLogo](http://www.qhull.org/html/qh--cone.gif)
+- 🔖 [MUMPS](http://mumps.enseeiht.fr/) 💡 Library for computing large sparse matrices. Used for parallel calculation.|
+- 🔖 [LAPACK/BLAS](http://www.netlib.org/lapack/) 💡 Numerical Analysis Software Library for Linear Computing |
+- 🔖 [Numpy/Scipy](https://www.scipy.org/) 💡 Numerical computation extension for Python |
 
 +++
 
 ### 📗 Using Library
 
-- 🔖 [MUMPS](http://mumps.enseeiht.fr/) Library for computing large sparse matrices. Used for parallel calculation.
-- 🔖 [LAPACK/BLAS](http://www.netlib.org/lapack/) Numerical Analysis Software Library for Linear Computing
-- 🔖 [Numpy/Scipy](https://www.scipy.org/) Numerical computation extension for Python
-
 - 💁 Compile Test Install　
+
 **make && make check && sudo make install**
 
 +++

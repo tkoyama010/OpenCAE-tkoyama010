@@ -200,7 +200,7 @@ md.add_fem_variable('u', mfu)
 
 +++
 
-### 🏃 Laplacian_brick
+### 🏃 Laplacian_brick, RHS and condition 
 
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
@@ -208,9 +208,6 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
 md.add_Laplacian_brick(mim, 'u')
 ```
-
-### 🏃 Setting various conditions
-
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
 import numpy as np

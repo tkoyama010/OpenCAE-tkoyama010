@@ -49,16 +49,19 @@
 
 +++
 
-### 🤔 What is PDE and FEM?
+@snap[midpoint text-left]
+### 🤔 What is PDE and FEM❓
 
-- The behavior of all physical phenomena can be expressed by PDE.
-- FEM is a method of PDE.
+✅ PDE is a equation using in physics, engineering, and many other disciplines.
+
+✅ FEM is a method of PDE.
 
 ![mesh2](mesh2.png)
+@snapend
 
 +++
 
-### 🤔 What is PDE and FEM?
+### 🤔 What is PDE and FEM❓
 
 ![mesh2](http://getfem.org/_images/getfemuserlinearsys.png)
 

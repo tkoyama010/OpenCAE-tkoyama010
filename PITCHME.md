@@ -90,14 +90,14 @@
 
 +++
 
-### Installation Instructions@Ubuntu
+### 🔰Installation Instructions@Ubuntu
 
 ```bash
 sudo apt install python-getfem++
 ```
 
-- THAT'S ALL!!
-- This is the end of the story and we don't know what's inside... so I get the source code with wget.
+@size[2.5em](😂) THAT'S ALL
+@size[2.5em](😆) Let's install from source code to study❗
 
 ```bash
 wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
@@ -106,7 +106,7 @@ getfem-5.3.tar.gz
 
 +++
 
-### Installation Instructions@Ubuntu
+### 🔰Installation Instructions@Ubuntu
 
 - Run the usual commands in the unzipped folder:.
 ```bash

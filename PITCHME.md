@@ -51,7 +51,7 @@
 
 ### 🤔 What is PDE and FEM❓
 
-❗ PDE is a equation using in physics, engineering, and many other disciplines.
+❗ PDE is a equation using in physics, engineering.
 
 ❗ FEM is a method of solving PDE.
 

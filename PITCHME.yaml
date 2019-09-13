@@ -1,4 +1,5 @@
-#Enable latex
+theme : white
+
 mathjax : TeX-MML-AM_HTMLorMML-full
 
 transition : none

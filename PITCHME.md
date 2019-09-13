@@ -24,8 +24,9 @@
 
 +++
 
-### Agenda
 @snap[midpoint text-left]
+### Agenda
+
 ✅ Overview
 
 ✅ Installation

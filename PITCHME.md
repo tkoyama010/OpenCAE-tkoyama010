@@ -25,6 +25,9 @@
 +++
 
 ### Agenda
+@snap[midpoint text-right text-white]
+The Moon Rise
+@snapend
 - ✅ Overview    
 - ✅ Installation
 - ✅ Example     

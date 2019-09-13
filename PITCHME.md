@@ -200,7 +200,7 @@ md.add_fem_variable('u', mfu)
 
 +++
 
-### 🏃 Laplacian_brick, RHS and condition 
+### 🏃 Laplacian Brick, RHS and condition 
 
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python

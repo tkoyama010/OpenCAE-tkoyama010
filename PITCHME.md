@@ -126,12 +126,9 @@ $ ./configure --with-pic --enable-python3=yes
 
 - 💁 Compile Test Install　
 
-**make && make check && sudo make install**
-
-+++
-
-![getfem_structure1](http://getfem.org/_images/getfem_structure1.png)
-
+```bash
+make && make check && sudo make install
+```
 +++
 
 ### Topic

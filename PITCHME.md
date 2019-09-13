@@ -29,7 +29,6 @@
 - ✅Overview
 - ✅Installation
 - ✅Example
-- ✅About Mayavi
 - ✅Summary
 
 +++
@@ -280,6 +279,22 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
+### Summary
+
+- ✅Overview
+- ✅Installation
+- ✅Example
+- ✅About Mayavi
+- ✅Summary
+
+🏃 source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
+
++++
+
+### Thank you 🙇
+
++++
+
 ### Creating an Image with Mayavi
 
 ```python
@@ -297,19 +312,3 @@ mlab.savefig(filename, magnification=2)
 mlab.clf()
 ```
 - Then use the saved image to display the image on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
-
-+++
-
-### Summary
-
-- ✅Overview
-- ✅Installation
-- ✅Example
-- ✅About Mayavi
-- ✅Summary
-
-🏃 source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
-
-+++
-
-### Thank you 🙇

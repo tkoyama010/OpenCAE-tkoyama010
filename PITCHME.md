@@ -28,19 +28,11 @@
 ### Agenda
 
 
-✅ Overview
-
-
-✅ Installation
-
-
-✅ Example
-
-
-✅ About Mayavi
-
-
-✅ Summary
+- ✅ Overview
+- ✅ Installation
+- ✅ Example
+- ✅ About Mayavi
+- ✅ Summary
 
 
 @snapend
@@ -109,8 +101,7 @@ $ sudo apt install python-getfem++
 @size[2.0em](😆) Let's install from source code to study❗
 
 ```
-$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
-getfem-5.3.tar.gz***
+$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.3.tar.gz
 ```
 +++
 
@@ -326,12 +317,12 @@ mlab.clf()
 
 ### Summary
 
-- I explained the finite element method.
-- We have described the internal structure of GetFEM
-- GetFEM++ and Mayavi documentation on Transifex [Translating](https://www.transifex.com/getfem-doc/). We welcome your cooperation.
-- We plan to publish a translation of the GetFEM + + documentation in Technical Document 7.
-- A translation of the Mayavi documentation is available at [Here](https://mayavi-ja.readthedocs.io/ja/latest/).
-- Today's exercise was performed here on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
+- ✅ I explained the finite element method.
+- ✅ We have described the internal structure of GetFEM
+- ✅ GetFEM++ and Mayavi documentation on Transifex [Translating](https://www.transifex.com/getfem-doc/). We welcome your cooperation.
+- ✅ We plan to publish a translation of the GetFEM + + documentation in Technical Document 7.
+- ✅ A translation of the Mayavi documentation is available at [Here](https://mayavi-ja.readthedocs.io/ja/latest/).
+- ✅ Today's exercise was performed here on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
 
 +++
 

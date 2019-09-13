@@ -15,9 +15,9 @@
 
 ### Who are you? 👀
 
-- Since last year, I have been distributing translated books of [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B) in the event technical book of [techbookfest](https://techbookfest.org/).
-- 😝I'm a GetFEM + + committer, but I've been earning commits for odd jobs. (Fix types, refactoring, translation tasks, etc.)
-- I have recently started to add objects because I understand the internal structure quite well.
+- 👨‍💻 Contribution to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
+- 👨‍💻 Fix types, refactoring, translation tasks, etc.
+- 👨‍💻 Add two object.
   - lumped mass brick object
   - Houbolt method objects
 - 😤[contributing status](https://github.com/tkoyama010/getfem/graphs/contributors) my first goal is 100 commits.
@@ -51,13 +51,15 @@
 
 ### 🤔 What is PDE and FEM❓
 
-❗ PDE is a equation using in physics, engineering, and many other disciplines. FEM is a method of solving PDE.
+❗ PDE is a equation using in physics, engineering, and many other disciplines.
+
+❗ FEM is a method of solving PDE.
 
 ![mesh2](http://getfem.org/_images/getfemuserlinearsys.png)
 
 +++
 
-### 👨‍💻What is GetFEM++?
+### 👨‍💻What is GetFEM++❓
 
 - This library provides a framework for solving the finite element method, one of the methods for solving differential equations.
 - FEM is a method of solving differential equations.

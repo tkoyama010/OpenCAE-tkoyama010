@@ -49,9 +49,11 @@
 
 +++
 
+@snap[midpoint text-left]
 ### 🤔 What is PDE and FEM❓
 
 ❗ PDE is a equation using in physics, engineering, and many other disciplines. FEM is a method of solving PDE.
+@snap[midpoint text-left]
 
 ![mesh2](http://getfem.org/_images/getfemuserlinearsys.png)
 

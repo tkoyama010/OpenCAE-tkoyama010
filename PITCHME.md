@@ -202,7 +202,7 @@ md.add_fem_variable('u', mfu)
 
 ### 🏃 Laplacian_brick, RHS and condition 
 
-$$***−\Delta u=1*** \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
+***$$−\Delta u=1$$***$$ \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
 # MeshIm object assigns an integral method to the mesh
 mim = gf.MeshIm(mesh, pow(elements_degree,2))

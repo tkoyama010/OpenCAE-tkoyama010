@@ -26,9 +26,13 @@
 
 ### Agenda
 ✅ Overview    
+
 ✅ Installation
+
 ✅ Example     
+
 ✅ About Mayavi
+
 ✅ Summary     
 
 +++

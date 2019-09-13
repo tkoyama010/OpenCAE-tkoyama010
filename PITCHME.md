@@ -142,7 +142,6 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 ### Mesher Object
 
-- Creates the geometry by Mesher object .
 ```python
 import getfem as gf
 mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
@@ -154,7 +153,6 @@ mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 
 ### Mesh object
 
-- Creates a mesh object based on the geometry information of the Mesher object.
 ```python
 # Approximate mesh length
 h = 0.1
@@ -166,14 +164,10 @@ mesh = gf.Mesh('generate', mo, h, 2)
 
 +++
 
-### Move and Region Mesh
+### Move Mesh and Set Region
 
-- Moves the center position of the mesh to (0.0, 0.0).
 ```python
 mesh.translate([-1.0, -1.0])
-```
-- You will also set up an area for setting boundary conditions later.
-```python
 fb = mesh.outer_faces()
 OUTER_BOUND = 1
 mesh.set_region(OUTER_BOUND, fb)

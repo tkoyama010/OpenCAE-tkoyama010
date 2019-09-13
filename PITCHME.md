@@ -202,13 +202,10 @@ md.add_fem_variable('u', mfu)
 
 ### 🏃 Laplacian_brick
 
-- Creates a MeshIm object that assigns an integral method to the mesh.
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
+# MeshIm object assigns an integral method to the mesh
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
-```
-- Adds the left-hand term of a differential equation to a Model object.
-$$−\Delta u=1 \ {\rm on}\  \Omega$$
-```python
 md.add_Laplacian_brick(mim, 'u')
 ```
 
@@ -216,16 +213,15 @@ md.add_Laplacian_brick(mim, 'u')
 
 ### 🏃 Setting various conditions
 
-- Sets the right-hand term of a differential equation to a Model object.
-$$−\Delta u=1 \ {\rm on}\  \Omega$$
-- The variable name should be 'F'.
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
 import numpy as np
+# The variable name should be 'F'.
 md.add_fem_data('F', mfu)
 md.add_source_term_brick(mim, 'u', 'F')
 md.set_variable('F', np.repeat(1.0, mfu.nbdof()))
 ```
-- Set the boundary condition $u = 0 $(Dirichlet condition).
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
 md.add_Dirichlet_condition_with_multipliers(
     mim, 'u', elements_degree - 1, OUTER_BOUND

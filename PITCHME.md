@@ -176,17 +176,17 @@ mesh.set_region(OUTER_BOUND, fb)
 
 +++
 
-### 🏃 Creating a MeshFem Object
+### 🏃 MeshFem Object
 
-- Create the object MeshFEM to assign the finite element method to the mesh. The node has 1 degree of freedom.
 ```python
+# The node has 1 degree of freedom
 mfu = gf.MeshFem(mesh, 1)
-```
-- This time use the normal [Lagrange Element](http://getfem.org/userdoc/appendixA.html#classical-lagrange-elements-on-simplices). The element order is be 2.
-```python
 elements_degree = 2
+
+# classical lagrange elements
 mfu.set_classical_fem(elements_degree)
 ```
+[Lagrange Element](http://getfem.org/userdoc/appendixA.html#classical-lagrange-elements-on-simplices)
 
 +++
 

@@ -24,18 +24,13 @@
 
 +++
 
-@snap[midpoint text-left]
 ### Agenda
 
-
-- ✅ Overview
-- ✅ Installation
-- ✅ Example
-- ✅ About Mayavi
-- ✅ Summary
-
-
-@snapend
+- ✅Overview
+- ✅Installation
+- ✅Example
+- ✅About Mayavi
+- ✅Summary
 
 +++
 

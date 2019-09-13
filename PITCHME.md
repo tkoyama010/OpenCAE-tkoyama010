@@ -90,7 +90,7 @@
 
 +++
 
-### 🔰Installation@Ubuntu
+### 🔰Installation@![Ubuntu](https://assets.ubuntu.com/v1/1be42010-cof_orange_hex.jpg)
 
 It is easy to install by apt.
 
@@ -105,7 +105,7 @@ getfem-5.3.tar.gz***
 
 +++
 
-### 🔰Installation@Ubuntu
+### 🔰Installation@![Ubuntu](https://assets.ubuntu.com/v1/1be42010-cof_orange_hex.jpg)
 
 - Run ***./configure***
   - --with-pic 💡 options for 64 bit compilation

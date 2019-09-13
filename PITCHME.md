@@ -113,10 +113,10 @@ $ ./configure --with-pic --enable-python3=yes
 
 ### 📗 Using Library
 
-- 🔖 [Qhull](http://www.qhull.org/) 💡 A library used to compute the structure of convexs. This allows for mesh generation.
-- 🔖 [MUMPS](http://mumps.enseeiht.fr/) 💡 Library for computing large sparse matrices. Used for parallel calculation.
-- 🔖 [LAPACK/BLAS](http://www.netlib.org/lapack/) 💡 Numerical Analysis Software Library for Linear Computing
-- 🔖 [Numpy/Scipy](https://www.scipy.org/) 💡 Numerical computation extension for Python
+- 🔖 [Qhull](http://www.qhull.org/) 💡 mesh generation.
+- 🔖 [MUMPS](http://mumps.enseeiht.fr/) 💡 parallel calculation.
+- 🔖 [LAPACK/BLAS](http://www.netlib.org/lapack/) 💡 Linear Algebra
+- 🔖 [Numpy/Scipy](https://www.scipy.org/) 💡 Numerical computation of Python
 
 ![QhullLogo](http://www.qhull.org/html/qh--cone.gif)
 

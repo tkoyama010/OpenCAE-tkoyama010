@@ -260,7 +260,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
-### 🎉 Comparison between calculated results and theoretical solutions
+### 🎉 Compare
 
 ![error1](error1.png)
 

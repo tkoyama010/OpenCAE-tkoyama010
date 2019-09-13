@@ -116,7 +116,7 @@ $ ./configure --with-pic --enable-python3=yes
 - 🔖 [Qhull](http://www.qhull.org/) 💡 mesh generation.
 - 🔖 [MUMPS](http://mumps.enseeiht.fr/) 💡 parallel calculation.
 - 🔖 [LAPACK/BLAS](http://www.netlib.org/lapack/) 💡 Linear Algebra
-- 🔖 [Numpy/Scipy](https://www.scipy.org/) 💡 Numerical computation of Python
+- 🔖 [Numpy/Scipy](https://www.scipy.org/) 💡 Numerical computation
 
 ![QhullLogo](http://www.qhull.org/html/qh--cone.gif)
 

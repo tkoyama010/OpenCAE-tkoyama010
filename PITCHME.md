@@ -53,6 +53,12 @@
 
 ❗ PDE is a equation using in physics, engineering.
 
+![getfemuserlinearsys](getfemuserlinearsys.png)
+
++++
+
+### 🤔 What is PDE and FEM❓
+
 ❗ FEM is a method of solving PDE.
 
 ![getfemuserlinearsys](getfemuserlinearsys.png)

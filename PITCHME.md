@@ -8,8 +8,8 @@
 ### Who are you?
 
 - @tkoyama010: [Twitter](https://twitter.com/tkoyama010), [Booth](https://tkoyama010.booth.pm/)
-- I have been developing civil engineering and architectural software and conducting contract analysis with a software vendor of the finite element method for about 8 years.(Fortran, Python, C++, VBScript etc)
-- I'm a graduate of the Earthquake Engineering Department of Architecture.
+- Fortran, Python, C++, VBScript etc
+- Simulation in Earthquake Engineering
  - [IMPROVEMENT OF CALCULATION PRECISION OF THEORETICAL GROUND MOTIONS USING THIN LAYER METHOD AND ITS VERIFICATION, PART 2](https://www.jstage.jst.go.jp/article/aijt/17/35/17_35_55/_article/-char/ja/)
  - [EVALUATION OF PERMANENT GROUND DISPLACEMENT ADJACENT TO SEISMIC FAULT USING THIN LAYER METHOD](https://www.jstage.jst.go.jp/article/aijt/22/50/22_17/_pdf)
 

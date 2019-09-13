@@ -220,7 +220,7 @@ md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER
 
 +++
 
-### 🏃 Calculation of unknown variable 'u'
+### 🏃 Solve 'u'
 
 - Now that the Model object is complete, solve computes the unknown variable 'u'.
 ```python

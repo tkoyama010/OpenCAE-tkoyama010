@@ -176,7 +176,7 @@ mesh.set_region(OUTER_BOUND, fb)
 
 +++
 
-### 🏃 MeshFem Object
+### 🏃 [MeshFem](http://getfem.org/python/cmdref_MeshFem.html?highlight=meshfem%20object) Object
 
 ```python
 # The node has 1 degree of freedom
@@ -190,14 +190,11 @@ mfu.set_classical_fem(elements_degree)
 
 +++
 
-### 🏃 Model object
+### 🏃 [Model Object](http://getfem.org/userdoc/model_object.html)
 
-- Create a [Model Object](http://getfem.org/userdoc/model_object.html) to solve problems with simultaneous equations.
 ```python
 md = gf.Model('real')
-```
-- Add the variable 'u' using the MeshFem object.
-```python
+# Add the variable 'u' using the MeshFem object.
 md.add_fem_variable('u', mfu)
 ```
 

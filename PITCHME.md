@@ -186,7 +186,7 @@ elements_degree = 2
 # classical lagrange elements
 mfu.set_classical_fem(elements_degree)
 ```
-![Lagrange Element](http://getfem.org/_images/getfemlisttriangleP2.png)
+![Lagrange Element](https://raw.githubusercontent.com/tkoyama010/OpenCAE-tkoyama010/PyConJP2019/getfemlisttriangleP2.png)
 
 +++
 

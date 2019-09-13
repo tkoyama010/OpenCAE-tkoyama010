@@ -200,43 +200,29 @@ md.add_fem_variable('u', mfu)
 
 +++
 
-### 🏃 Laplacian_brick
+### 🏃 Laplacian Brick, RHS and condition 
 
-- Creates a MeshIm object that assigns an integral method to the mesh.
+$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $
 ```python
+# −\Delta u
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
-```
-- Adds the left-hand term of a differential equation to a Model object.
-$$−\Delta u=1 \ {\rm on}\  \Omega$$
-```python
 md.add_Laplacian_brick(mim, 'u')
-```
 
-+++
-
-### 🏃 Setting various conditions
-
-- Sets the right-hand term of a differential equation to a Model object.
-$$−\Delta u=1 \ {\rm on}\  \Omega$$
-- The variable name should be 'F'.
-```python
+# RHS 1
 import numpy as np
 md.add_fem_data('F', mfu)
 md.add_source_term_brick(mim, 'u', 'F')
 md.set_variable('F', np.repeat(1.0, mfu.nbdof()))
-```
-- Set the boundary condition $u = 0 $(Dirichlet condition).
-```python
-md.add_Dirichlet_condition_with_multipliers(
-    mim, 'u', elements_degree - 1, OUTER_BOUND
-)
+
+# u=0 on OUTER_BOUND
+md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER_BOUND)
 ```
 
 +++
 
-### 🏃 Calculation of unknown variable 'u'
+### 🏃 Solve $u$
 
-- Now that the Model object is complete, solve computes the unknown variable 'u'.
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
 md.solve()
 U = md.variable('u')
@@ -246,20 +232,20 @@ mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 
 +++
 
-### 🏅 Calculation of unknown variable 'u'
+### 🎉 variable ***u***
 
 ![solution1](solution1.png)
 
 +++
 
 ### theoretical solution
-- The theoretical solution is given by.
 $$u(x, y) = \dfrac{1-x^2-y^2}{4}$$
-- The coordinates of each node are obtained by numpy.array and the theoretical solution is calculated.
 ```python
 xy = mfu.basic_dof_nodes()
 x = xy[0, :]
 y = xy[1, :]
+
+# theoretical solution
 sol = (1-x*x-y*y)/4.0
 vtkfilename = 'sol.vtk'
 mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
@@ -274,7 +260,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
-### 🎉 Comparison between calculated results and theoretical solutions
+### 🎉 Compare
 
 ![error1](error1.png)
 

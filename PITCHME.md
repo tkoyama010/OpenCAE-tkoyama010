@@ -133,7 +133,7 @@ $ make && make check && sudo make install
 
 ### 🏃 Tutorial
 
-- Problem of [MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)
+Problem of [MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 ![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)

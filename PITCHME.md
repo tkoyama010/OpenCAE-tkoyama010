@@ -92,7 +92,7 @@
 
 ### 🔰Installation@Ubuntu
 
-@size[2.0em](😂) It is is to install by apt.
+@size[2.0em](😂) It is easy to install by apt.
 
 ```bash
 sudo apt install python-getfem++

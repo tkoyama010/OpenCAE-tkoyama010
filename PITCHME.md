@@ -196,6 +196,7 @@ md = gf.Model('real')
 # Add the variable 'u' using the MeshFem object.
 md.add_fem_variable('u', mfu)
 ```
+![Model Object](getfemuserlinearsys.png)
 
 +++
 

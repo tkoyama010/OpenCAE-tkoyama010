@@ -86,7 +86,7 @@
 
 [Release Notes Version 4.3](http://getfem.org/whatsnew/4.3.html) @2014/07/14
 
-- Development has been underway since the 1990s.
+😯 Development has continued since the 1990s.
 
 +++
 

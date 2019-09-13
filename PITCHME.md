@@ -90,13 +90,14 @@
 
 +++
 
-### 🔰Installation Instructions@Ubuntu
+### 🔰Installation@Ubuntu
+
+@size[2.0em](😂) It is is to install by apt.
 
 ```bash
 sudo apt install python-getfem++
 ```
-
-@size[2.0em](😂) THAT'S ALL
+...but
 
 @size[2.0em](😆) Let's install from source code to study❗
 

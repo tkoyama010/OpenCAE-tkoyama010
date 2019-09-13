@@ -62,7 +62,6 @@
 ### 👨‍💻What is GetFEM++❓
 
 - This library provides a framework for solving the finite element method, one of the methods for solving differential equations.
-- FEM is a method of solving differential equations.
 
 ![shape3](http://getfem.org/_images/shape3.png)
 ![shape4](http://getfem.org/_images/shape4.png)

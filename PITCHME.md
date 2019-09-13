@@ -311,4 +311,4 @@ mlab.show()
 mlab.savefig(filename, magnification=2)
 mlab.clf()
 ```
-- Then use the saved image to display the image on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
+

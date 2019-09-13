@@ -25,14 +25,18 @@
 +++
 
 ### Agenda
-@snap[midpoint text-right text-white]
-The Moon Rise
+@snap[midpoint text-left]
+✅ Overview
+
+✅ Installation
+
+✅ Example
+
+✅ About Mayavi
+
+✅ Summary
+
 @snapend
-- ✅ Overview    
-- ✅ Installation
-- ✅ Example     
-- ✅ About Mayavi
-- ✅ Summary     
 
 +++
 

@@ -205,16 +205,16 @@ md.add_fem_variable('u', mfu)
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
 # −\Delta u
-# MeshIm object assigns an integral method to the mesh
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
 md.add_Laplacian_brick(mim, 'u')
-# 1 on Omega
+
+# RHS 1
 import numpy as np
-# The variable name should be 'F'.
 md.add_fem_data('F', mfu)
 md.add_source_term_brick(mim, 'u', 'F')
 md.set_variable('F', np.repeat(1.0, mfu.nbdof()))
-# u=0 on dOmega
+
+# u=0 on OUTER_BOUND
 md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER_BOUND)
 ```
 

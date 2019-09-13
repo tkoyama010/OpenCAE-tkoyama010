@@ -109,7 +109,7 @@ getfem-5.3.tar.gz***
 
 - Run ***./configure***
   - --with-pic 💡 options for 64 bit compilation
-  - --enable-python3=yes 💡 Option to use python3 instead of python2
+  - --enable-python3=yes 💡 Option to use python3
 
 +++
 

@@ -202,25 +202,20 @@ md.add_fem_variable('u', mfu)
 
 ### 🏃 Laplacian_brick, RHS and condition 
 
-***$$−\Delta u=1$$***$$ \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
+# −\Delta u
 # MeshIm object assigns an integral method to the mesh
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
 md.add_Laplacian_brick(mim, 'u')
-```
-$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
-```python
+# 1 on Omega
 import numpy as np
 # The variable name should be 'F'.
 md.add_fem_data('F', mfu)
 md.add_source_term_brick(mim, 'u', 'F')
 md.set_variable('F', np.repeat(1.0, mfu.nbdof()))
-```
-$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
-```python
-md.add_Dirichlet_condition_with_multipliers(
-    mim, 'u', elements_degree - 1, OUTER_BOUND
-)
+# u=0 on dOmega
+md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER_BOUND)
 ```
 
 +++

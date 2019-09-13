@@ -4,3 +4,5 @@ mathjax : TeX-MML-AM_HTMLorMML-full
 transition : none
 
 highlight : monokai
+
+logo : https://pycon.jp/2019/_nuxt/img/bdcd569.svg

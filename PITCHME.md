@@ -29,7 +29,6 @@
 - ✅Overview
 - ✅Installation
 - ✅Example
-- ✅About Mayavi
 - ✅Summary
 
 +++
@@ -186,7 +185,7 @@ elements_degree = 2
 # classical lagrange elements
 mfu.set_classical_fem(elements_degree)
 ```
-![Lagrange Element](http://getfem.org/_images/getfemlisttriangleP2.png)
+![Lagrange Element](https://raw.githubusercontent.com/tkoyama010/OpenCAE-tkoyama010/PyConJP2019/getfemlisttriangleP2.png)
 
 +++
 
@@ -197,6 +196,7 @@ md = gf.Model('real')
 # Add the variable 'u' using the MeshFem object.
 md.add_fem_variable('u', mfu)
 ```
+![Model Object](getfemuserlinearsys.png)
 
 +++
 
@@ -246,7 +246,7 @@ mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 
 +++
 
-### Calculation of unknown variable 'u'
+### 🏅 Calculation of unknown variable 'u'
 
 ![solution1](solution1.png)
 
@@ -274,9 +274,25 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
-### Comparison between calculated results and theoretical solutions
+### 🎉 Comparison between calculated results and theoretical solutions
 
 ![error1](error1.png)
+
++++
+
+### Summary
+
+- ✅Overview
+- ✅Installation
+- ✅Example
+- ✅About Mayavi
+- ✅Summary
+
+🏃 source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
+
++++
+
+### Thank you 🙇
 
 +++
 
@@ -296,19 +312,4 @@ mlab.show()
 mlab.savefig(filename, magnification=2)
 mlab.clf()
 ```
-- Then use the saved image to display the image on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
 
-+++
-
-### Summary
-
-- ✅ I explained the finite element method.
-- ✅ We have described the internal structure of GetFEM
-- ✅ GetFEM++ and Mayavi documentation on Transifex [Translating](https://www.transifex.com/getfem-doc/). We welcome your cooperation.
-- ✅ We plan to publish a translation of the GetFEM + + documentation in Technical Document 7.
-- ✅ A translation of the Mayavi documentation is available at [Here](https://mayavi-ja.readthedocs.io/ja/latest/).
-- ✅ Today's exercise was performed here on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
-
-+++
-
-### Thank you 🙇

@@ -41,16 +41,16 @@
 
 +++
 
-### 🤔 What is PED and FEM?
+### 🤔 What is PDE and FEM?
 
-- The behavior of all physical phenomena (electrical, thermal, elastic, etc.) can be expressed by differential equations.
-- FEM is a method of solving differential equations.
+- The behavior of all physical phenomena can be expressed by PDE.
+- FEM is a method of PDE.
 
 ![mesh2](mesh2.png)
 
 +++
 
-### 🤔 What is PED and FEM?
+### 🤔 What is PDE and FEM?
 
 ![mesh2](http://getfem.org/_images/getfemuserlinearsys.png)
 

@@ -209,8 +209,6 @@ mim = gf.MeshIm(mesh, pow(elements_degree,2))
 md.add_Laplacian_brick(mim, 'u')
 ```
 
-+++
-
 ### 🏃 Setting various conditions
 
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$

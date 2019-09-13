@@ -90,7 +90,7 @@
 
 +++
 
-### 🔰Installation@![Ubuntu](./ubuntu-logo.png)
+### 🔰Installation@ ![Ubuntu](./ubuntu-logo.png)
 
 It is easy to install by apt.
 
@@ -105,7 +105,7 @@ getfem-5.3.tar.gz***
 
 +++
 
-### 🔰Installation@![Ubuntu](./ubuntu-logo.png)
+### 🔰Installation@ ![Ubuntu](./ubuntu-logo.png)
 
 - Run ***./configure***
   - --with-pic 💡 options for 64 bit compilation

@@ -55,7 +55,7 @@
 
 ❗ FEM is a method of solving PDE.
 
-![mesh2](http://getfem.org/_images/getfemuserlinearsys.png)
+![getfemuserlinearsys](getfemuserlinearsys.png)
 
 +++
 

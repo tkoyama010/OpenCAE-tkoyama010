@@ -202,7 +202,7 @@ md.add_fem_variable('u', mfu)
 
 ### 🏃 Laplacian Brick, RHS and condition 
 
-$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
+**$−\Delta u$**$=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $
 ```python
 # −\Delta u
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
@@ -222,7 +222,7 @@ md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER
 
 ### 🏃 Solve ***u***
 
-- Now that the Model object is complete, solve computes the unknown variable 'u'.
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
 md.solve()
 U = md.variable('u')

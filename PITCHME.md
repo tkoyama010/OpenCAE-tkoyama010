@@ -94,18 +94,14 @@
 
 @size[2.0em](😂) It is easy to install by apt.
 
-```
-$ sudo apt install python-getfem++
-```
+***$ sudo apt install python-getfem++***
 
 ...but
 
 @size[2.0em](😆) Let's install from source code to study❗
 
-```
-$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
-getfem-5.3.tar.gz
-```
+***$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
+getfem-5.3.tar.gz***
 
 +++
 

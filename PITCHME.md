@@ -274,7 +274,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
-### Comparison between calculated results and theoretical solutions
+### 🎉 Comparison between calculated results and theoretical solutions
 
 ![error1](error1.png)
 
@@ -302,12 +302,13 @@ mlab.clf()
 
 ### Summary
 
-- ✅ I explained the finite element method.
-- ✅ We have described the internal structure of GetFEM
-- ✅ GetFEM++ and Mayavi documentation on Transifex [Translating](https://www.transifex.com/getfem-doc/). We welcome your cooperation.
-- ✅ We plan to publish a translation of the GetFEM + + documentation in Technical Document 7.
-- ✅ A translation of the Mayavi documentation is available at [Here](https://mayavi-ja.readthedocs.io/ja/latest/).
-- ✅ Today's exercise was performed here on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
+- ✅Overview
+- ✅Installation
+- ✅Example
+- ✅About Mayavi
+- ✅Summary
+
+🏃 source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
 
 +++
 

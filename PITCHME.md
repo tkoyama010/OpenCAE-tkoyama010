@@ -133,14 +133,13 @@ $ make && make check && sudo make install
 
 ### 🏃 Tutorial
 
-Problem of [MathWork](https://jp.mathworks.com/help/pde/ug/solve-poissons-equation-on-a-unit-disk.html)
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 ![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
 
 +++
 
-### Mesher Object
+### 🏃 Mesher Object
 
 ```python
 import getfem as gf
@@ -151,7 +150,7 @@ mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 
 +++
 
-### Mesh object
+### 🏃 Mesh object
 
 ```python
 # Approximate mesh length
@@ -164,7 +163,7 @@ mesh = gf.Mesh('generate', mo, h, 2)
 
 +++
 
-### Move Mesh and Set Region
+### 🏃 Move Mesh and Set Region
 
 ```python
 mesh.translate([-1.0, -1.0])
@@ -177,7 +176,7 @@ mesh.set_region(OUTER_BOUND, fb)
 
 +++
 
-### Creating a MeshFem Object
+### 🏃 Creating a MeshFem Object
 
 - Create the object MeshFEM to assign the finite element method to the mesh. The node has 1 degree of freedom.
 ```python
@@ -191,7 +190,7 @@ mfu.set_classical_fem(elements_degree)
 
 +++
 
-### Model object
+### 🏃 Model object
 
 - Create a [Model Object](http://getfem.org/userdoc/model_object.html) to solve problems with simultaneous equations.
 ```python
@@ -204,7 +203,7 @@ md.add_fem_variable('u', mfu)
 
 +++
 
-### Laplacian_brick
+### 🏃 Laplacian_brick
 
 - Creates a MeshIm object that assigns an integral method to the mesh.
 ```python
@@ -218,7 +217,7 @@ md.add_Laplacian_brick(mim, 'u')
 
 +++
 
-### Setting various conditions
+### 🏃 Setting various conditions
 
 - Sets the right-hand term of a differential equation to a Model object.
 $$−\Delta u=1 \ {\rm on}\  \Omega$$
@@ -238,7 +237,7 @@ md.add_Dirichlet_condition_with_multipliers(
 
 +++
 
-### Calculation of unknown variable 'u'
+### 🏃 Calculation of unknown variable 'u'
 
 - Now that the Model object is complete, solve computes the unknown variable 'u'.
 ```python

@@ -86,7 +86,7 @@
 
 [Release Notes Version 4.3](http://getfem.org/whatsnew/4.3.html) @2014/07/14
 
-@size[2.5em](😯) Development has continued since the 1990s❗
+@size[2.0em](😯) Development has continued since the 1990s❗
 
 +++
 
@@ -96,8 +96,9 @@
 sudo apt install python-getfem++
 ```
 
-@size[2.5em](😂) THAT'S ALL
-@size[2.5em](😆) Let's install from source code to study❗
+@size[2.0em](😂) THAT'S ALL
+
+@size[2.0em](😆) Let's install from source code to study❗
 
 ```bash
 wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/

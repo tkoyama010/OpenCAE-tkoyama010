@@ -97,9 +97,17 @@
 ```
 $ sudo apt install python-getfem++
 ```
+@[](flagに「true」を代入)
+
 ...but
 
 @size[2.0em](😆) Let's install from source code to study❗
+
+```
+$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
+getfem-5.3.tar.gz
+```
+@[2](flagに「true」を代入)
 
 +++
 

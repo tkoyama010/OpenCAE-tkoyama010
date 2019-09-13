@@ -25,11 +25,11 @@
 +++
 
 ### Agenda
-- ✅ Overview
-- ✅ Installation
-- ✅ Example
-- ✅ About Mayavi
-- ✅ Summary
+✅ Overview    
+✅ Installation
+✅ Example     
+✅ About Mayavi
+✅ Summary     
 
 +++
 

@@ -105,15 +105,11 @@ getfem-5.3.tar.gz***
 
 +++
 
-### 🔰Installation Instructions@Ubuntu
+### 🔰Installation@Ubuntu
 
-- Run the usual commands in the unzipped folder:.
-
-***$ ./configure***
-
-- 💡--with-pic : options for 64 bit compilation
-
-- 💡--enable-python3=yes : Option to use python3 instead of python2
+- Run ***./configure***
+  - --with-pic 💡 options for 64 bit compilation
+  - --enable-python3=yes 💡 Option to use python3 instead of python2
 
 +++
 

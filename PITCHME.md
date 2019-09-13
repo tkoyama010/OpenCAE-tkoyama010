@@ -246,7 +246,7 @@ mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 
 +++
 
-### Calculation of unknown variable 'u'
+### 🏅 Calculation of unknown variable 'u'
 
 ![solution1](solution1.png)
 

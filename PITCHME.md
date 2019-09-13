@@ -94,15 +94,18 @@
 
 It is easy to install by apt.
 
-***$ sudo apt install python-getfem++***
+```bash
+$ sudo apt install python-getfem++
+```
 
 ...but
 
 @size[2.0em](😆) Let's install from source code to study❗
 
-***$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
+```
+$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
 getfem-5.3.tar.gz***
-
+```
 +++
 
 ### 🔰Installation@ ![Ubuntu](https://raw.githubusercontent.com/tkoyama010/OpenCAE-tkoyama010/PyConJP2019/ubuntulogo.png)

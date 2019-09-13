@@ -89,21 +89,20 @@
 @size[2.0em](😯) Development has continued since the 1990s❗
 
 +++
----?color=#e49436
 
 ### 🔰Installation@Ubuntu
 
 @size[2.0em](😂) It is easy to install by apt.
 
-```bash
-sudo apt install python-getfem++
+```
+$ sudo apt install python-getfem++
 ```
 ...but
 
 @size[2.0em](😆) Let's install from source code to study❗
 
-```bash
-wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
+```
+$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
 getfem-5.3.tar.gz
 ```
 

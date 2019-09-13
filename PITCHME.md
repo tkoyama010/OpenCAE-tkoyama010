@@ -53,6 +53,12 @@
 
 ❗ PDE is a equation using in physics, engineering.
 
+![getfemuserlinearsys](getfemuserlinearsys.png)
+
++++
+
+### 🤔 What is PDE and FEM❓
+
 ❗ FEM is a method of solving PDE.
 
 ![getfemuserlinearsys](getfemuserlinearsys.png)
@@ -61,15 +67,14 @@
 
 ### 👨‍💻What is GetFEM++❓
 
-- This library provides a framework for solving the finite element method, one of the methods for solving differential equations.
-- FEM is a method of solving differential equations.
+⭐ This library provides a framework for solving PDE by FEM.
 
 ![shape3](http://getfem.org/_images/shape3.png)
 ![shape4](http://getfem.org/_images/shape4.png)
 
 +++
 
-### Release Notes
+### 📄Release Notes
 
 [Release Notes Version 5.3](http://getfem.org/whatsnew/5.3.html) @2018/06/22
 
@@ -81,37 +86,30 @@
 
 [Release Notes Version 4.3](http://getfem.org/whatsnew/4.3.html) @2014/07/14
 
-- Development has been underway since the 1990s.
-- Source code is refactored while maintaining backward compatibility.
-- The current development version supports C + + 14.
+@size[2.0em](😯) Development has continued since the 1990s❗
 
 +++
 
-### Installation Instructions@Ubuntu
+### 🔰Installation@![Ubuntu](https://assets.ubuntu.com/v1/1be42010-cof_orange_hex.jpg)
 
-```bash
-sudo apt install python-getfem++
-```
+It is easy to install by apt.
 
-- THAT'S ALL!!
-- This is the end of the story and we don't know what's inside... so I get the source code with wget.
+***$ sudo apt install python-getfem++***
 
-```bash
-wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
-getfem-5.3.tar.gz
-```
+...but
+
+@size[2.0em](😆) Let's install from source code to study❗
+
+***$ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/
+getfem-5.3.tar.gz***
 
 +++
 
-### Installation Instructions@Ubuntu
+### 🔰Installation@![Ubuntu](https://assets.ubuntu.com/v1/1be42010-cof_orange_hex.jpg)
 
-- Run the usual commands in the unzipped folder:.
-```bash
-./configure
-```
-
-- --with-pic : options for 64 bit compilation
-- --enable-python3=yes : Option to use python3 instead of python2
+- Run ***./configure***
+  - --with-pic 💡 options for 64 bit compilation
+  - --enable-python3=yes 💡 Option to use python3
 
 +++
 

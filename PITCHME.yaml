@@ -1,8 +1,10 @@
 #Enable latex
 mathjax : TeX-MML-AM_HTMLorMML-full
 
-theme-override : assets/css/PITCHME.css
-
 transition : none
 
 highlight : monokai
+
+logo : https://papercallio-production.s3.amazonaws.com/uploads/event/logo/2278/mid_300_pyconjp_logo_s.png
+
+background-color : white

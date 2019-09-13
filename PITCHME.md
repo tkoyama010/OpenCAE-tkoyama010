@@ -326,3 +326,7 @@ mlab.clf()
 - We plan to publish a translation of the GetFEM + + documentation in Technical Document 7.
 - A translation of the Mayavi documentation is available at [Here](https://mayavi-ja.readthedocs.io/ja/latest/).
 - Today's exercise was performed here on [JupyterNotebook](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
+
++++
+
+### Thank you 🙇

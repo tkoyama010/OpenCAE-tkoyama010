@@ -1,19 +1,21 @@
 # Introduction to FEM Analysis with Python
 
 Nice to meet you. My name is Koyama. Thank you for giving me the opportunity to speak today.
-Today I'm going to make an announcement under the title of "The Poisson equation on the unit circle is solved.".
+Today I'm going to make an announcement under the title of "Introduction to FEM Analysis with Python".
 
-# Who are you?
+# Who am I?
 
 First of all, who on earth are you? So let me introduce myself. I will explain the main activities.
 TwitterID is @tkoyama010. This icon is active under the account name of "Get the finite element method". Please follow me if you like. Also, there is no blog, but Booth distributes technical coterie magazines. I have been developing civil engineering and architectural software and performing commissioned analysis at a CAE software vendor for about 8 years. My work includes programming in Fortran, Python, and C + +, as well as work automation using VBScript. I'm a numerical calculator. When I was a student, I was studying at the earthquake research laboratory of the architecture department.
-At that time, I became interested in programming by studying the simulation of the behavior of structures. I'll post a link to the research paper, so if you're interested, you can access it later through this presentation.
+At that time, I became interested in programming by studying the simulation of the behavior of structures.
 
 # Who are you?
 
-Since last year, he has been distributing a translation of the documentation of the OSS library GetFEM++ in the Technical Doujinshi Event Technical Book. It was the second time since I participated in Technical Book 5. He is part of the GetFEM + + project and calls himself a committer. but I have earned a lot of commits for most of my chores.
-For example, I've been working on projects for about two years, doing FixTypo, refactoring, translating, and so on. I've learned a lot from just looking at the source code, but recently I wanted to add an object myself, so I added one earlier this year. We are currently adding a second object and hope to finish testing by the end of this month.
+Since last year, I has been distributing a translation of the documentation of the OSS library which called GetFEM++ . 
+For example, I've been working on projects for about two years, doing FixTypo, refactoring, translating, and so on. I've learned a lot from just looking at the source code, but recently I wanted to add an object myself, so I added one earlier this year. I'm currently adding a second object.
 As far as I can see, I have about 50 commits at the moment, so I am aiming for 100 commits.
+
+# Agenda
 
 # Questionnaire
 
@@ -21,23 +23,19 @@ Well, this library GetFEM++, provides a framework for solving finite element met
 - If you have ever heard of the word "finite element method".
 Thank you.
 - If you have ever heard of the word "differential equation".
-Thank you. Even if you have heard the word differential equation, I think most of you can eat it by finite element method. It's a short time, but I'd like to explain that part first.
-Thank you in advance.
+Thank you. Even if you have heard the word differential equation, I think most of you don't know finite element method. It's a short time, but I'd like to explain that part first.
 
-# What is the finite element method?
+# What is PDE and FEM?
 
-Physical phenomena such as electricity, heat, and the behavior of objects can all be expressed by equations called differential equations.
-The finite element method is a method of solving differential equations.
-For example, let's solve the phenomenon that the wheel touches the ground like this.
-In this way, the area is divided into mesh and the calculation is performed.
-The mesh is called an element, and the intersection of the mesh sides is called a node.
-You must specify a finite element method and an integral method for each region of the mesh.
-The finite element method calculates this unknown variable by converting it into a form of simultaneous equations.
+PDE is a equation using in physics, engineering, Such as electricity, heat, and the behavior of objects can all be expressed by PDE.
+The finite element method is a method of PDE.
+FEMはPDEを連立方程式に変換して問題をときます。
 
 # GetFEM++
 
-A finite element library implemented in C++.
-The Python interface is used primarily.
+This library provides a framework for solving PDE by FEM.
+A finite element library it'self is coded C++.
+But the Python interface is used primarily.
 Install the python-getfem++ package on Ubuntu.
 By the way, since Python 3 version is already supported, Debian package will be created soon.
 Because of its object-oriented implementation, you can simply define an object and call a method to execute it.
@@ -45,45 +43,36 @@ Because of its object-oriented implementation, you can simply define an object a
 # Release Notes
 
 The release notes contain updates for each version, so you can see what's hot right now for development within the library.
-It is September now, so the next version will be released in a while.。
+It is September now, so the next version will be released in a while.
 The development itself started in the 90s, and the source code is refactored while maintaining backward compatibility.
-The current development version supports C++14.
 
-# Installation Instructions @ Ubuntu
+# Installation@ Ubuntu
 
-Basically, if you use apt or aptitude, you can install it on Ubuntu.
+Now let's install it! In Ubuntu, you can install it by apt command. It is very easy.
 But it's boring, so I'm going to compile and install it with various libraries.
+You can get source code by wget command.
 
-# Installation Instructions @ Ubuntu
+# Installation@ Ubuntu
 
-Use the usual./configure.
+Afeter downloading sources. Run ./configure command.
+ There are some options.
 This will verify that the necessary libraries are installed.
-The default user interface for GetFEM is Python 2, but you can optionally switch to Python 3.
-The next slide describes the required libraries.
+The default user interface for GetFEM is 32bit and Python 2, but you can optionally switch to Python 3.
+So what is the libray is need?
 
-# Installation Instructions @ Ubuntu
+# Using Library
 
-First, QD and qhull. It's easy to say this from the start, but QD is a library that I'm not sure what it's used for.
-The message also says don't worry because only certain people use it.
-qhull is a library used to compute the convex structure, which cuts the mesh.
+There are 4 library need for compile. Qhull, MUMPS, LAPACK/BLAS, Numpy/Scipy.
+Qhull is a library used to compute the convex structure, which cuts the mesh.
+FEM use mesh structure to solve, like this.
+MUMPS is the library for parallel calculation which is import to solve big size of FEM.
+LAPACK/BLAS is the library for Linear Algebra.
+Numpy/Scipy is as you know, the library of Numercal computation in Python.
 
-# Installation Instructions @ Ubunt
+# Using Library
 
-Then MUMPS, LAPACK/BLAS, and Numpy Scipy.
-This area is so famous that you may not need to explain it.
-Note that libopenblas-dev is faster than pure blas library.
-
-# Installation Instructions @ Ubuntu
-
-This completes the library installation.
-Then you can do a compile-test install with make & & make check & & make install.
-I recently noticed that parallel compilation with make-j8 is faster.
-If the test is FAIL, please email the development team.
-If you don't know, you can email the following mailing list in English.
-However, if you want to know the inside of GetFEM before using it, and if you can use the finite element method, It is a good idea to compile.
-But if you only want to use it, installing with apt is better.
-Now you can install by apt with Windows 10 wsl.
-The Python 3 version has not yet been registered in the package, but is pending.
+After install these library.
+You can compile make command, make check command to test annd make install command to install.
 
 # To create an object
 

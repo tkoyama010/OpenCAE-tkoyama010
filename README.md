@@ -29,7 +29,7 @@ Thank you. Even if you have heard the word differential equation, I think most o
 
 PDE is a equation using in physics, engineering, Such as electricity, heat, and the behavior of objects can all be expressed by PDE.
 The finite element method is a method of PDE.
-FEMはPDEを連立方程式に変換して問題をときます。
+FEM solves the problem by converting PDE into simultaneous equations like this.
 
 # GetFEM++
 

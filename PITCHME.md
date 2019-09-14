@@ -123,7 +123,7 @@ $ ./configure --with-pic --enable-python3=yes
 
 ### 📗 Using Library
 
-- 💁 Compile Test Install　
+💁 Compile Test Install　
 
 ```bash
 $ make && make check && sudo make install

@@ -44,7 +44,7 @@
 
 ❗ PDE is a equation using in physics, engineering.
 
-$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
+$$−\Delta u=1$$
 
 +++
 
@@ -204,7 +204,8 @@ md.add_fem_variable('u', mfu)
 ### 🏃 Laplacian Brick, RHS and condition 
 
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
-
+to
+$$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
 ```python
 # −\Delta u
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
@@ -263,7 +264,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
-### 🎉 Compare
+### 🎉 Error
 
 ![error1](error1.png)
 

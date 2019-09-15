@@ -53,7 +53,7 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 ❗ FEM is a method of solving PDE.
 
-$$[\bold{K}] \bold{u} = \bold{F}$$
+$$[\bold{K}] \{u\} = \{F\}$$
 
 +++
 

@@ -53,7 +53,7 @@ $−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $
 
 ❗ FEM is a method of solving PDE.
 
-$[K]{u} = {F}$
+$[K]\{u\} = \{F\}$
 
 +++
 
@@ -191,12 +191,12 @@ mfu.set_classical_fem(elements_degree)
 
 ### 🏃 [Model Object](http://getfem.org/userdoc/model_object.html)
 
+$[K]\{u\} = \{F\}$
 ```python
 md = gf.Model('real')
 # Add the variable 'u' using the MeshFem object.
 md.add_fem_variable('u', mfu)
 ```
-$[K]{u} = {F}$
 
 +++
 

@@ -5,15 +5,15 @@
 
 +++
 
-### Who are you? 👀
+### Who am I? 👀
 
 - @tkoyama010: [Twitter](https://twitter.com/tkoyama010), [Booth](https://tkoyama010.booth.pm/)
-- Fortran, Python, C++, VBScript etc
-- Simulation in Earthquake Engineering
+- career: Numerical analysis
+- skills: Fortran, Python, C++, VBScript etc
 
 +++
 
-### Who are you? 👀
+### Who am I? 👀
 
 - 👨‍💻 Contribution to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
 - 👨‍💻 Fix types, refactoring, translation tasks, etc.

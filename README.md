@@ -1,7 +1,7 @@
 # Introduction to FEM Analysis with Python
 
 Nice to meet you. My name is Koyama. Thank you for giving me the opportunity to speak today.
-Today I'm going to make an announcement under the title of "Introduction to FEM Analysis with Python".
+Today I'm going to talk under the title of "Introduction to FEM Analysis with Python".
 
 # Who are you? 👀
 

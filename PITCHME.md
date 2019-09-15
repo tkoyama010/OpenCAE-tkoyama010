@@ -45,7 +45,7 @@
 
 ❗ PDE is a equation using in physics, engineering.
 
-![getfemuserlinearsys](getfemuserlinearsys.png)
+$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $
 
 +++
 
@@ -53,7 +53,7 @@
 
 ❗ FEM is a method of solving PDE.
 
-![getfemuserlinearsys](getfemuserlinearsys.png)
+$[K]{u} = {F}$
 
 +++
 
@@ -196,7 +196,7 @@ md = gf.Model('real')
 # Add the variable 'u' using the MeshFem object.
 md.add_fem_variable('u', mfu)
 ```
-![Model Object](getfemuserlinearsys.png)
+$[K]{u} = {F}$
 
 +++
 

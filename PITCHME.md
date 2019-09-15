@@ -132,24 +132,26 @@ $ make && make check && sudo make install
 
 ### 🏃 Tutorial
 
-$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
-
 ![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
+
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 +++
 
 ### 🏃 Mesher Object
+
+![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
 
 ```python
 import getfem as gf
 mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 ```
 
-![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
-
 +++
 
 ### 🏃 Mesh object
+
+![mesh1](mesh1.png)
 
 ```python
 # Approximate mesh length
@@ -158,11 +160,11 @@ h = 0.1
 mesh = gf.Mesh('generate', mo, h, 2)
 ```
 
-![mesh1](mesh1.png)
-
 +++
 
 ### 🏃 Move Mesh and Set Region
+
+![mesh2](mesh2.png)
 
 ```python
 mesh.translate([-1.0, -1.0])
@@ -171,11 +173,11 @@ OUTER_BOUND = 1
 mesh.set_region(OUTER_BOUND, fb)
 ```
 
-![mesh2](mesh2.png)
-
 +++
 
 ### 🏃 [MeshFem](http://getfem.org/python/cmdref_MeshFem.html?highlight=meshfem%20object) Object
+
+![Lagrange Element](https://raw.githubusercontent.com/tkoyama010/OpenCAE-tkoyama010/PyConJP2019/getfemlisttriangleP2.png)
 
 ```python
 # The node has 1 degree of freedom
@@ -185,13 +187,13 @@ elements_degree = 2
 # classical lagrange elements
 mfu.set_classical_fem(elements_degree)
 ```
-![Lagrange Element](https://raw.githubusercontent.com/tkoyama010/OpenCAE-tkoyama010/PyConJP2019/getfemlisttriangleP2.png)
 
 +++
 
 ### 🏃 [Model Object](http://getfem.org/userdoc/model_object.html)
 
 $$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
+
 ```python
 md = gf.Model('real')
 # Add the variable 'u' using the MeshFem object.
@@ -203,6 +205,7 @@ md.add_fem_variable('u', mfu)
 ### 🏃 Laplacian Brick, RHS and condition 
 
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
+
 ```python
 # −\Delta u
 mim = gf.MeshIm(mesh, pow(elements_degree,2))
@@ -223,6 +226,7 @@ md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER
 ### 🏃 Solve $u$
 
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
+
 ```python
 md.solve()
 U = md.variable('u')

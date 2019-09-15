@@ -191,7 +191,7 @@ mfu.set_classical_fem(elements_degree)
 
 ### 🏃 [Model Object](http://getfem.org/userdoc/model_object.html)
 
-$$[K]\left\{u\right\} = \left\{F\right\}$$
+$$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
 ```python
 md = gf.Model('real')
 # Add the variable 'u' using the MeshFem object.

@@ -150,13 +150,22 @@ mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 
 ### 🏃 Mesh object
 
-![mesh2](mesh2.png)
+![mesh1](mesh1.png)
 
 ```python
 # Approximate mesh length
 h = 0.1
 # Create Mesh Objects with second order elements
 mesh = gf.Mesh('generate', mo, h, 2)
+```
+
++++
+
+### 🏃 Move Mesh and Set Region
+
+![mesh2](mesh2.png)
+
+```python
 mesh.translate([-1.0, -1.0])
 fb = mesh.outer_faces()
 OUTER_BOUND = 1

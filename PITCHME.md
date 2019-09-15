@@ -28,7 +28,7 @@
 
 - ✅Overview
 - ✅Installation
-- ✅Example
+- ✅Tutorial
 - ✅Summary
 
 +++
@@ -270,7 +270,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 - ✅Overview
 - ✅Installation
-- ✅Example
+- ✅Tutorial
 - ✅Summary
 
 🏃 source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).

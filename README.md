@@ -3,13 +3,13 @@
 Nice to meet you. My name is Koyama. Thank you for giving me the opportunity to speak today.
 Today I'm going to make an announcement under the title of "Introduction to FEM Analysis with Python".
 
-# Who am I?
+# Who are you? 👀
 
 First of all, who on earth are you? So let me introduce myself. I will explain the main activities.
 TwitterID is @tkoyama010. This icon is active under the account name of "Get the finite element method". Please follow me if you like. Also, there is no blog, but Booth distributes technical coterie magazines. I have been developing civil engineering and architectural software and performing commissioned analysis at a CAE software vendor for about 8 years. My work includes programming in Fortran, Python, and C + +, as well as work automation using VBScript. I'm a numerical calculator. When I was a student, I was studying at the earthquake research laboratory of the architecture department.
 At that time, I became interested in programming by studying the simulation of the behavior of structures.
 
-# Who are you?
+# Who are you? 👀
 
 Since last year, I has been distributing a translation of the documentation of the OSS library which called GetFEM++ . 
 For example, I've been working on projects for about two years, doing FixTypo, refactoring, translating, and so on. I've learned a lot from just looking at the source code, but recently I wanted to add an object myself, so I added one earlier this year. I'm currently adding a second object.
@@ -17,7 +17,7 @@ As far as I can see, I have about 50 commits at the moment, so I am aiming for 1
 
 # Agenda
 
-# Questionnaire
+# 📝 Question❗
 
 Well, this library GetFEM++, provides a framework for solving finite element methods. I would like to do a questionnaire here.
 - If you have ever heard of the word "finite element method".
@@ -25,13 +25,16 @@ Thank you.
 - If you have ever heard of the word "differential equation".
 Thank you. Even if you have heard the word differential equation, I think most of you don't know finite element method. It's a short time, but I'd like to explain that part first.
 
-# What is PDE and FEM?
+# 🤔 What is PDE and FEM❓
 
 PDE is a equation using in physics, engineering, Such as electricity, heat, and the behavior of objects can all be expressed by PDE.
+
+# 🤔 What is PDE and FEM❓
+
 The finite element method is a method of PDE.
 FEM solves the problem by converting PDE into simultaneous equations like this.
 
-# GetFEM++
+# 👨‍💻What is GetFEM++❓
 
 This library provides a framework for solving PDE by FEM.
 A finite element library it'self is coded C++.
@@ -40,19 +43,19 @@ Install the python-getfem++ package on Ubuntu.
 By the way, since Python 3 version is already supported, Debian package will be created soon.
 Because of its object-oriented implementation, you can simply define an object and call a method to execute it.
 
-# Release Notes
+# 📄Release Notes
 
 The release notes contain updates for each version, so you can see what's hot right now for development within the library.
 It is September now, so the next version will be released in a while.
 The development itself started in the 90s, and the source code is refactored while maintaining backward compatibility.
 
-# Installation@ Ubuntu
+# 🔰Installation@ Ubuntu
 
 Now let's install it! In Ubuntu, you can install it by apt command. It is very easy.
 But it's boring, so I'm going to compile and install it with various libraries.
 You can get source code by wget command.
 
-# Installation@ Ubuntu
+# 🔰Installation@ Ubuntu
 
 Afeter downloading sources. Run ./configure command.
  There are some options.
@@ -60,7 +63,7 @@ This will verify that the necessary libraries are installed.
 The default user interface for GetFEM is 32bit and Python 2, but you can optionally switch to Python 3.
 So what is the libray is need?
 
-# Using Library
+# 📗 Using Library
 
 There are 4 library need for compile. Qhull, MUMPS, LAPACK/BLAS, Numpy/Scipy.
 Qhull is a library used to compute the convex structure, which cuts the mesh.
@@ -69,158 +72,100 @@ MUMPS is the library for parallel calculation which is import to solve big size 
 LAPACK/BLAS is the library for Linear Algebra.
 Numpy/Scipy is as you know, the library of Numercal computation in Python.
 
-# Using Library
+# 📗 Using Library
 
 After install these library.
 You can compile make command, make check command to test annd make install command to install.
 
-# To create an object
+# 🏃 Tutorial
 
-Here is the flow of object creation.
-First, you specify which geometries of the Mesher object solve the problem.
-Next, you'll create the Mesh object described above, based on the Mesher object.
-Create the MeshFem and MeshIm objects by defining the finite element and integral methods for each mesh in the Mesh object, respectively.
-Finally, you populate the Model object with MeshFem and MeshIm objects to complete the object.
+Now let's try tutorial!
+This time, I will solve the this problem.
+Solving are is a circle with a radius of 1.0 as shown here, and within that circle you have a PDE which called Lapacian.
+Let's call this circle "omega".
+RHS of the equation is 1.0.
+This means the there is a load at all of the circle.
+The value of u at side of "omega" which calle delta-omega is zero.
 
-# This time's topic
+# 🏃 Mesher Object
 
-This time, I will solve the MathWork problem.
-Let's say you have a circle with a radius of 1.0 as shown here, and within that circle you have a differential equation like this one.
-Also assume that the variable u is 0 at the boundary of the circle (It's called Dirichlet condition.).
+First of all we have to make the geometory of the circle by using MesherObject.
+As a args, set string 'ball' as a shape of geometory and center coordinates and radius size.
 
-# Creating the Mesher Object
+# 🏃 Mesh object
 
-Let's start by creating a Mesher object.
-
-# Creating the Mesher Object
-
-First, import getfem.
-Then use the MeserObject function with the arguments' ball ', the center coordinate (1.0, 1.0), and a radius of 1.0 to create a 2-dimensional circle.
-As you can see, the center coordinate should be (0.0, 0.0), but MeserObject cannot be negative.
+As you can see, the center coordinate should be x=0.0, and y=0.0, but MeserObject cannot set negative value.
 So we'll build the mesh in the center (1.0, 1.0) and later modify the center coordinates to the (0.0, 0.0) location.
+When you build object you can use Mesh object.
+The args are string to 'generate' mesh, mesher object, size of approximate mesh length, and the order of element which set 2 in this problem.
 
-# Create a Mesh object
+# 🏃 Move Mesh and Set Region
 
-Next, create a Mesh object from the Mesher object.
-First, set the approximate length h of the mesh.
-In this case, we set 0.5 referring to MathWork's page.
-Then use the Mesh function to create a Mesh object.
-The arguments are 'generate' and the Mesher objects mo and h that you just created.
-Finally, we set the element order to 2.
+Next move center of circle of the mesh to (0.0, 0.0).
+And set the outer bound region.
 
-# Move Mesh and Set Region
+# 🏃 Move Mesh and Set Region
 
 The center of the resulting mesh object is in (1.0, 1.0), as described earlier.
 Use the translate method to move the mesh into position (0.0, 0.0).
 Also set boundaries for mesh objects.
-The boundary of the circle must be set at the part where the value of 'u' is 0.0.
-Use the set _ region method to set the boundary.
-The first argument is the number of the boundary and the second argument is the face number of the boundary.
-Since it is difficult to remember the boundary face numbers, we will replace them with OUTER _ BOUND and the variable.
-You can also get the face number (In this case, it's a line because it's two-dimensional.) of the circle boundary used as the second argument fb in a method called outer _ faces.
-Now that you have a mesh object, this time you have a very simple mesh shape.
-Typically, meshes used in production are more complex.
-To do so, create mesh objects by importing meshes created with other meshing software.
 
-# Creating a MeshFEM Object
+# 🏃 MeshFem Object
 
-Next, you will create a MeshFEM object that assigns the finite element method to the Mesh. When defining the object, you need the dimension defined in the previous slide for the intersection of the mesh object and the mesh (They are called nodes.). In this case, the node has a dimension of 1, so set it to 1. Then assign the finite element method to the mesh. This time, we'll use the commonly used Lagrange element. The method uses set _ calsical _ fem. You must set the element order. Since we have set the mesh order to 2, let's also set the finite element method order to 2. We used the default finite element method, but GetFEM + + allows you to use other kinds of finite element methods. As you can see on this page, there are various methods, so if you are interested, please see them later.
+Next link the FEM to Mesh Object. You can use MeshFem object for this task.
+In this problem, we'll set the element which called classical Lagrange element as you can see in this picture.
+Make MeshFem object by the args mesh object and the degree of freedom of these nodes.
+Then set classical Lagrange element by set_classical_fem method.
 
-# Create a Model object
+# 🏃 Model Object
 
-Some of you may already be disappointed with the explanation so far, but it's half done. Please keep in touch with me for a while.
-Finally, create a Model object.
-This object manages variables and differential equation terms for solving simultaneous equations.
-This time, define the variable md as a real Model object.
-You then use the md method add _ fem _ variable to define the variable.
-The required arguments are the variable name and the corresponding MeshFem object.
-This time, use the expression to name the variable 'u', and the MeshFem object uses the mfu you just created.
+At the last, make the Model object and build the simultaneous equations.
+Set the MeshFem object as the unknown variable of simultaneous equations.
 
-# Adding Laplacian brick
+# 🏃 Laplacian Brick, RHS and condition
 
-Next, add a term for the differential equation to the Model object.
-First, add this left-hand term of the differential equation.
+Next, add a term of PDE, RHS and condition to the Model object.
+First, use add Laplacian birck method to add term of Laplacian term.
+Next, set the RHS by using add source term brick method.
 This term is mathematically called Laplacian.
-You use the model object's add _ Laplacian _ brick method to add terms.
-The required arguments are a MeshIm object and a variable to add the term to.
-The MeshIm object is used to assign the integration method to a mesh.
-It is defined by the MeshIm function.
-The argument must contain a mesh object and the order of the integration method.
-The mesh object is identical to the MeshFEM object, and the degree defines the square of the element's degree.
+At the end, set the outer bound region by using the add Dirichlet condition with multipliers method.
 
-# Setting Right-Edge Terms and Boundary Conditions
+# 🏃 Solve u
 
-Then we set the right-hand term of the differential equation on the Model object.
-We define the value of 1 with the variable name 'F'.
-The add _ fem _ variable method was used to define the left term, but the set _ fem _ data method is used to specify the right term.
-Specify the variable name and the MeshFEM object as you did for the variable method.
-Then the add _ source _ term _ brick method gives the source term 'F' to the variable 'u'.
-Since the source term 'F' is a known value before solving the problem, a value of 1.0 is required.
-When you set the value of a variable, you use the set _ variable method to set a vector with a value of 1.0.
-Finally, set the u = 0 condition for the boundary.
-This is called a Dirichlet condition and uses the add _ Dirichlet _ condition _ with _ multipliers method.
-The arguments are respectively the mim of the MeshIm object, the variable 'u' added earlier, and the value to be used as the coefficient in the Dirichlet condition (This is usually the element order minus 1.).
-It also specifies the area number OUTER _ BOUND that you specified when you created the Mesh object.
+Now we can set the all of the parameter.
+Are you tired of setting so many parameters?
+But the task is only make objects one by one.
+After make Model object, solve the simultanious equation and export the value of u.
 
-# Calculate unknown variable 'u'
+# 🎉 variable u
 
-Now you have a complete Model object.
-You can solve the problem by calling the solve method of the Model object.
-You can then use the variable method to retrieve variable data of type nompy.array.
-We recommend that you view the results in Mayavi, as introduced in the previous announcement.
-Use MeshFem's vtk output to do this.
-The method to use is export _ to _ vtk.
-Specify the vtk filename and MeshFem object, the retrieved variable 'U', and the variable name to output to the vtk file.
+This is the result of 'u'.
+The contour makes the circle.
+But this result is correct?
 
-# Calculation of unknown variable 'u'
+# theoretical solution
 
-This is the result of viewing the output vtk file in Mayavi.
-As you can see, the values are distributed concentrically from the center.
+Let's compare with the theoretical solution.
+The theoretical solution of this problem is this.
+Export to figure and see it.
 
-# calculation of the theoretical solution
+# theoretical solution
 
-The theoretical solution to this problem is shown here.
-By comparing with this theoretical solution, I would like to confirm the validity of the result calculated this time.
-First, we get the coordinates of each node in nompy.array.
-You can use the basic _ dof _ nodes method of the MeshFem object to get the coordinates of each node in nompy.array.
-Now that we know the coordinates, we can calculate the theoretical solution and output it to a vtk file for comparison.
+This is the result of theoretical solution.
+It seems to equal to the value of u which we solve by GetFEM
 
-# calculation of the theoretical solution
+### 🎉 Compare
 
-You can see that the values are distributed concentrically, similar to the previous result.
-
-# Comparison between calculated results and theoretical solutions
-Compare the calculated results with the theoretical solution.
-As a result, even the largest margin of error is 10^-6.
-
-# Creating an Image on JupyterNotebook by Mayavi
-
-Now, I have time to explain how I created this diagram in Mayavi.
-Here's Mayavi running on Jupyter to create an image.
-First, import mlab from mayavi.
-Next, the init_notebook () method initializes the mlab information.
-After initialization, the mlab.pipleline.open () method displays the vtk file.
-Then use a function called mlab.pipeline.surface to display the contours of the surface.
-You can use the scalarbar, show, and savefig methods to display the above diagram and save the image.
-It was hard to find a way to view the results of a vtk file in Mayavi, so I hope you're familiar with it.
+And this is the compare of the GetFEM++'s result and the theoretical solution.
+The diffrence is small and the correctness of GetFEM++ can be probed.
 
 # Summary
 
-That's all for my presentation, so let me summarize it at the end.
-First of all, I briefly introduced what the finite element method is.
-This method solves a differential equation on a mesh space by dividing the space with a mesh.
-Next, we briefly described the internal structure of GetFEM.
-First, you will create a Mesher object and use it to create a Mesh object.
-After you create a Mesh object, you create a MeshFem object that assigns a finite element method to the mesh and a MeshIm object that assigns an integration method to the mesh.
-Finally, you use the MeshFem and MeshIm objects to build differential equations and boundary conditions on the Model object.
-After the build is finished, use the solve method to calculate the unknown variable and real _ variable to get the value of the variable.
-MeshFEM methods can output results and Mayavi can plot them.
-Finally, let me make an advertisement.
-We are distributing technical coterie magazines with examples of such analyses.
-The content is an official English tutorial translated into Japanese.
-Please read this if you are interested.
-Also, when we translate Doujinshi, we do it on a website called Transfex.
-If you would like to participate in translation activities, please contact us.
-We are also working on a Japanese translation of Mayavi within the same project.
-We are working on the translation with the permission of the Mayavi developers on GitHub.
-Thank you for your attention.
+I talk about these contents.
+Overview of the GetFEM++
+Installation of the GetFEM++
+Example of the GetFEM++
+
+### Thank you 🙇
+
+And Thank you for listening my presentation.

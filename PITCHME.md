@@ -45,7 +45,7 @@
 
 ❗ PDE is a equation using in physics, engineering.
 
-$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 +++
 
@@ -53,7 +53,7 @@ $−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $
 
 ❗ FEM is a method of solving PDE.
 
-$[K]\left{u\right} = \left{F\right}$
+$$[K]\left\{u\right\} = \left\{F\right\}$$
 
 +++
 
@@ -191,7 +191,7 @@ mfu.set_classical_fem(elements_degree)
 
 ### 🏃 [Model Object](http://getfem.org/userdoc/model_object.html)
 
-$[K]\{u\} = \{F\}$
+$$[K]\left\{u\right\} = \left\{F\right\}$$
 ```python
 md = gf.Model('real')
 # Add the variable 'u' using the MeshFem object.
@@ -202,7 +202,7 @@ md.add_fem_variable('u', mfu)
 
 ### 🏃 Laplacian Brick, RHS and condition 
 
-$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $
+$$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 ```python
 # −\Delta u
 mim = gf.MeshIm(mesh, pow(elements_degree,2))

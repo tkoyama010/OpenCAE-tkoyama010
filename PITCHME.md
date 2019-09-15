@@ -116,7 +116,7 @@ $ ./configure --with-pic --enable-python3=yes
 - 🔖 [LAPACK/BLAS](http://www.netlib.org/lapack/) 💡 Linear Algebra
 - 🔖 [Numpy/Scipy](https://www.scipy.org/) 💡 Numerical computation
 
-![QhullLogo](http://www.qhull.org/html/qh--cone.gif)
+![mesh1](mesh1.png)
 
 +++
 

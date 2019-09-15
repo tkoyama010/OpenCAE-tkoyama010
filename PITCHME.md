@@ -32,15 +32,15 @@
 
 +++
 
-### 📝 Question❗
+### @size[2.0em](📝) Question❗
 
-✋ I KNOW "partial differential equations (PDE)"
+@size[2.0em](✋) I KNOW "partial differential equations (PDE)"
 
-✋ I KNOW "finite element method (FEM)"
+@size[2.0em](✋) I KNOW "finite element method (FEM)"
 
 +++
 
-### 🤔 What is PDE and FEM❓
+### @size[2.0em](🤔) What is PDE and FEM❓
 
 ❗ PDE is a equation using in physics, engineering.
 
@@ -48,7 +48,7 @@ $$−\Delta u=1$$
 
 +++
 
-### 🤔 What is PDE and FEM❓
+### @size[2.0em](🤔) What is PDE and FEM❓
 
 ❗ FEM is a method of solving PDE.
 
@@ -120,9 +120,9 @@ $ ./configure --with-pic --enable-python3=yes
 
 +++
 
-### 📗 Using Library
+### @size[2.0em](📗) Using Library
 
-💁 Compile Test Install　
+@size[2.0em](💁) Compile Test Install　
 
 ```bash
 $ make && make check && sudo make install
@@ -281,7 +281,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
-### Thank you 🙇
+### Thank you @size[2.0em](🙇)
 
 +++
 

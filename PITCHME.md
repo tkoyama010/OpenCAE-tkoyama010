@@ -277,7 +277,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 - ✅Tutorial
 - ✅Summary
 
-🏃 source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
+@size[2.0em](🏃) source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
 
 +++
 

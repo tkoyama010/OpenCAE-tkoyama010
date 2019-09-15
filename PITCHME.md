@@ -271,7 +271,6 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 - ✅Overview
 - ✅Installation
 - ✅Example
-- ✅About Mayavi
 - ✅Summary
 
 🏃 source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).

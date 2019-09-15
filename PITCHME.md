@@ -15,8 +15,7 @@
 
 ### Who am I? 👀
 
-- 👨‍💻 Contribution to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
-- 👨‍💻 Fix types, refactoring, translation tasks, etc.
+- 👨‍💻 Contributor to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
 - 👨‍💻 Add two object.
   - lumped mass brick object
   - Houbolt method objects

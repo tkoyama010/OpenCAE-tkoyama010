@@ -281,10 +281,6 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
-### Thank you @size[2.0em](🙇)
-
-+++
-
 ### Creating an Image with Mayavi
 
 ```python
@@ -302,3 +298,6 @@ mlab.savefig(filename, magnification=2)
 mlab.clf()
 ```
 
++++
+
+### Thank you @size[2.0em](🙇)

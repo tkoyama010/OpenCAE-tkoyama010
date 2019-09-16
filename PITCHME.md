@@ -161,7 +161,7 @@ mesh = gf.Mesh('generate', mo, h, 2)
 
 +++
 
-### 🏃 Set Region
+### 🏃 Move Mesh and Set Region
 
 ![mesh2](mesh2.png)
 

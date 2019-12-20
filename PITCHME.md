@@ -15,7 +15,7 @@
 
 ### Who am I? Abount @tkoyama010 @emoji[heart_eyes]
 
-- @emoji[construction_worker] Contributor to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
+- @emoji[gift] Contributor to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
 - 👨‍💻 Add two object.
   - 🚧lumped mass brick object🚧
   - 🚧Houbolt method objects🚧

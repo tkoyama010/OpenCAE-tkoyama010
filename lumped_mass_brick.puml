@@ -1,8 +1,6 @@
 @startuml
-Object <|-- ArrayList
+virtual_brick <|-- lumped_mass_brick_for_first_order
 
-Object : equals()
-ArrayList : Object[] elementData
-ArrayList : size()
+lumped_mass_brick_for_first_order : asm_real_tangent_terms()
 
 @enduml

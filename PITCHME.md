@@ -267,7 +267,15 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 @snapend
 
 @snap[east span-40]
-@uml[span-100 bg-white](sequence.puml)
+@uml[span-100 bg-white](lumped_mass_brick.puml)
+
++++
+@snap[west span-60]
+### 🚧 Development 🚧
+@snapend
+
+@snap[east span-40]
+@uml[span-100 bg-white](houbolt.puml)
 
 +++
 

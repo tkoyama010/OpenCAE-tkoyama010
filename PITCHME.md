@@ -19,7 +19,7 @@
 - 👨‍💻 Add two object.
   - 🚧lumped mass brick object🚧
   - 🚧Houbolt method objects🚧
-- 😤[contributing status](https://github.com/tkoyama010/getfem/graphs/contributors) my first goal is 100 commits.
+- 😤[contributing status](https://github.com/getfem-doc/getfem/graphs/contributors) my first goal is 100 commits.
 
 +++
 

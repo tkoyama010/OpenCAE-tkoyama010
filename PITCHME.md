@@ -262,9 +262,11 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 ![error1](error1.png)
 
 +++
-
+@snap[west span-60]
 ### 🚧 Development 🚧
+@snapend
 
+@snap[east span-60]
 @uml[span-100 bg-white](sequence.puml)
 
 +++

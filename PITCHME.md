@@ -13,7 +13,7 @@
 
 +++
 
-### Who am I? 👀
+### Who am I? Abount @tkoyama010 @emoji[heart_eyes]
 
 - 👨‍💻 Contributor to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
 - 👨‍💻 Add two object.

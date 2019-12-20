@@ -5,7 +5,7 @@
 
 +++
 
-### Who am I? @emoji[heart_eyes]
+### Who am I? Abount @tkoyama010 @emoji[heart_eyes]
 
 - @tkoyama010: [Twitter](https://twitter.com/tkoyama010), [Booth](https://tkoyama010.booth.pm/)
 - career: Numerical analysis

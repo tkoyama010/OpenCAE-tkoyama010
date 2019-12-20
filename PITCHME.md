@@ -16,8 +16,8 @@
 ### Who am I? Abount @tkoyama010 @emoji[heart_eyes]
 
 - @emoji[gift] Contributor to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
-- 👨‍💻 Add two object.
-  - 🚧lumped mass brick object🚧
+- @emoji[gift] Add two object.
+  - @emoji[construction]lumped mass brick object@emoji[construction]
   - 🚧Houbolt method objects🚧
 - 😤[contributing status](https://github.com/getfem-doc/getfem/graphs/contributors) my first goal is 100 commits.
 

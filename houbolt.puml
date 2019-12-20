@@ -1,8 +1,7 @@
 @startuml
-Object <|-- ArrayList
+virtual_time_scheme <|-- Houbolt_scheme
 
-Object : equals()
-ArrayList : Object[] elementData
-ArrayList : size()
-
+Houbolt_scheme : init_affine_dependent_variables()
+Houbolt_scheme : init_affine_dependent_variables_precomputation()
+Houbolt_scheme : time_derivative_to_be_initialized()
 @enduml

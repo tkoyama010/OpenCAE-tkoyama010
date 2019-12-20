@@ -265,6 +265,10 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 ### 🚧 Development 🚧
 
+@snap[east span-40]
+@uml[span-100 bg-white](sequence.puml)
+@snapend
+
 +++
 
 ### Summary

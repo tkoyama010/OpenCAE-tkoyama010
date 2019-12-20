@@ -28,15 +28,8 @@
 - ✅Overview
 - ✅Installation
 - ✅Tutorial
+- ✅Development
 - ✅Summary
-
-+++
-
-### @size[2.0em](📝) Question❗
-
-@size[2.0em](✋) I KNOW "partial differential equations (PDE)"
-
-@size[2.0em](✋) I KNOW "finite element method (FEM)"
 
 +++
 
@@ -270,11 +263,16 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
+### 🚧 Development 🚧
+
++++
+
 ### Summary
 
 - ✅Overview
 - ✅Installation
 - ✅Tutorial
+- ✅Development
 - ✅Summary
 
 @size[2.0em](🏃) source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).

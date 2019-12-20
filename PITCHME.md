@@ -17,8 +17,8 @@
 
 - 👨‍💻 Contributor to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
 - 👨‍💻 Add two object.
-  - lumped mass brick object
-  - Houbolt method objects
+  - 🚧lumped mass brick object🚧
+  - 🚧Houbolt method objects🚧
 - 😤[contributing status](https://github.com/tkoyama010/getfem/graphs/contributors) my first goal is 100 commits.
 
 +++

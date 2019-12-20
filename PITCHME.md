@@ -264,6 +264,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 +++
 @snap[west span-60]
 ### 🚧 Development 🚧
+lumped mass brick for first order
 @snapend
 
 @snap[east span-40]

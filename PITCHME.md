@@ -18,8 +18,8 @@
 - @emoji[gift] Contributor to [GetFEM++](https://ja.wikipedia.org/wiki/GetFEM%2B%2B).
 - @emoji[gift] Add two object.
   - @emoji[construction]lumped mass brick object@emoji[construction]
-  - 🚧Houbolt method objects🚧
-- 😤[contributing status](https://github.com/getfem-doc/getfem/graphs/contributors) my first goal is 100 commits.
+  - @emoji[construction]Houbolt method objects@emoji[construction]
+- @emoji[star][contributing status](https://github.com/getfem-doc/getfem/graphs/contributors) my first goal is 100 commits.
 
 +++
 
@@ -33,25 +33,25 @@
 
 +++
 
-### @size[2.0em](🤔) What is PDE and FEM❓
+### @emoji[question] What is PDE and FEM @emoji[question]
 
-❗ PDE is a equation using in physics, engineering.
+@emoji[exclamation] PDE is a equation using in physics, engineering.
 
 $$−\Delta u=1$$
 
 +++
 
-### @size[2.0em](🤔) What is PDE and FEM❓
+### @emoji[question] What is PDE and FEM @emoji[question]
 
-❗ FEM is a method of solving PDE.
+@emoji[exclamation] FEM is a method of solving PDE.
 
 $$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
 
 +++
 
-### 👨‍💻What is GetFEM++❓
+### @emoji[question] What is GetFEM++ @emoji[question]
 
-⭐ This library provides a framework for solving PDE by FEM.
+@emoji[star] This library provides a framework for solving PDE by FEM.
 
 ![shape3](http://getfem.org/_images/shape3.png)
 ![shape4](http://getfem.org/_images/shape4.png)

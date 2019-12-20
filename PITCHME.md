@@ -272,6 +272,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 +++
 @snap[west span-60]
 ### 🚧 Development 🚧
+Houbolt scheme
 @snapend
 
 @snap[east span-40]

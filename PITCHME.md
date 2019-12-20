@@ -1,5 +1,5 @@
 ---
-### @size[1.5em](GetFEM++ Contribution in 2019 @emoji[em-christmas_tree])
+### @size[1.5em](GetFEM++ Contribution in 2019 @emoji[em em-bell])
 
 [@tkoyama010](https://twitter.com/tkoyama010)
 

@@ -25,11 +25,11 @@
 
 ### Agenda
 
-- ✅Overview
-- ✅Installation
-- ✅Tutorial
-- ✅Development
-- ✅Summary
+- @emoji[white_check_mark]Overview
+- @emoji[white_check_mark]Installation
+- @emoji[white_check_mark]Tutorial
+- @emoji[white_check_mark]Development
+- @emoji[white_check_mark]Summary
 
 +++
 
@@ -58,7 +58,7 @@ $$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
 
 +++
 
-### 📄Release Notes
+### @emoji[books]Release Notes
 
 [Release Notes Version 5.3](http://getfem.org/whatsnew/5.3.html) @2018/06/22
 

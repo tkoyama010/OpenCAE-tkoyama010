@@ -74,7 +74,7 @@ $$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
 
 +++
 
-### 🔰Installation@ ![Ubuntu](https://raw.githubusercontent.com/tkoyama010/OpenCAE-tkoyama010/PyConJP2019/ubuntulogo.png)
+### 🔰Installation @fab[linux]
 
 It is easy to install by apt.
 

@@ -312,4 +312,4 @@ mlab.clf()
 
 +++
 
-### Thank you @size[2.0em](@emoji[bow])
+### Thank you @emoji[bow]

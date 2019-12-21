@@ -74,7 +74,7 @@ $$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
 
 +++
 
-### @emoji[children_crossing] Installation @fab[linux]
+### @emoji[beginner] Installation @fab[linux]
 
 It is easy to install by apt.
 

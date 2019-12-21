@@ -70,11 +70,11 @@ $$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
 
 [Release Notes Version 4.3](http://getfem.org/whatsnew/4.3.html) @2014/07/14
 
-@size[2.0em](😯) Development has continued since the 1990s❗
+@size[2.0em](@emoji[flushed]) Development has continued since the 1990s @emoji[exclamation]
 
 +++
 
-### 🔰Installation @fab[linux]
+### @emoji[children_crossing] Installation @fab[linux]
 
 It is easy to install by apt.
 
@@ -84,45 +84,45 @@ $ sudo apt install python-getfem++
 
 ...but
 
-@size[2.0em](😆) Let's install from source code to study❗
+@size[2.0em](@emoji[laughing]) Let's install from source code to study @emoji[exclamation]
 
 ```
 $ wget http://download-mirror.savannah.gnu.org/releases/getfem/stable/getfem-5.3.tar.gz
 ```
 +++
 
-### 🔰Installation@ ![Ubuntu](https://raw.githubusercontent.com/tkoyama010/OpenCAE-tkoyama010/PyConJP2019/ubuntulogo.png)
+### @emoji[beginner] Installation @fab[linux]
 
 - Run ***./configure***
-  - --with-pic 💡 options for 64 bit compilation
-  - --enable-python3=yes 💡 option to use python3
+  - --with-pic @emoji[bulb] options for 64 bit compilation
+  - --enable-python3=yes @emoji[bulb] option to use python3
 ```bash
 $ ./configure --with-pic --enable-python3=yes
 ```
 
 +++
 
-### 📗 Using Library
+### @emoji[beginner] Using Library
 
-- 🔖 [Qhull](http://www.qhull.org/) 💡 mesh generation.
-- 🔖 [MUMPS](http://mumps.enseeiht.fr/) 💡 parallel calculation.
-- 🔖 [LAPACK/BLAS](http://www.netlib.org/lapack/) 💡 Linear Algebra
-- 🔖 [Numpy/Scipy](https://www.scipy.org/) 💡 Numerical computation
+- @emoji[bookmark] [Qhull](http://www.qhull.org/) @emoji[bulb] mesh generation.
+- @emoji[bookmark] [MUMPS](http://mumps.enseeiht.fr/) @emoji[bulb] parallel calculation.
+- @emoji[bookmark] [LAPACK/BLAS](http://www.netlib.org/lapack/) @emoji[bulb] Linear Algebra
+- @emoji[bookmark] [Numpy/Scipy](https://www.scipy.org/) @emoji[bulb] Numerical computation
 
 ![mesh1](mesh1.png)
 
 +++
 
-### @size[2.0em](📗) Using Library
+### @emoji[beginner] Using Library
 
-@size[2.0em](💁) Compile Test Install　
+@emoji[arrow_forward] Compile @emoji[arrow_forward] Test @emoji[arrow_forward] Install　
 
 ```bash
 $ make && make check && sudo make install
 ```
 +++
 
-### 🏃 Tutorial
+### @emoji[feet] Tutorial
 
 ![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
 
@@ -130,7 +130,7 @@ $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 
 +++
 
-### 🏃 Mesher Object
+### @emoji[feet] Mesher Object
 
 ![pdedemo1_01](https://jp.mathworks.com/help/examples/pde/win64/pdedemo1_01.png)
 
@@ -141,7 +141,7 @@ mo = gf.MesherObject('ball', [1.0, 1.0], 1.0)
 
 +++
 
-### 🏃 Mesh object
+### @emoji[feet] Mesh object
 
 ![mesh1](mesh1.png)
 
@@ -154,7 +154,7 @@ mesh = gf.Mesh('generate', mo, h, 2)
 
 +++
 
-### 🏃 Move Mesh and Set Region
+### @emoji[feet] Move Mesh and Set Region
 
 ![mesh2](mesh2.png)
 
@@ -167,7 +167,7 @@ mesh.set_region(OUTER_BOUND, fb)
 
 +++
 
-### 🏃 [MeshFem](http://getfem.org/python/cmdref_MeshFem.html?highlight=meshfem%20object) Object
+### @emoji[feet] [MeshFem](http://getfem.org/python/cmdref_MeshFem.html?highlight=meshfem%20object) Object
 
 ![Lagrange Element](https://raw.githubusercontent.com/tkoyama010/OpenCAE-tkoyama010/PyConJP2019/getfemlisttriangleP2.png)
 
@@ -182,7 +182,7 @@ mfu.set_classical_fem(elements_degree)
 
 +++
 
-### 🏃 [Model Object](http://getfem.org/userdoc/model_object.html)
+### @emoji[feet] [Model Object](http://getfem.org/userdoc/model_object.html)
 
 $$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
 
@@ -194,7 +194,7 @@ md.add_fem_variable('u', mfu)
 
 +++
 
-### 🏃 Laplacian Brick, RHS and condition 
+### @emoji[feet] Laplacian Brick, RHS and condition 
 
 $$−\Delta u=1 \ {\rm on}\  \Omega, u=0 \ {\rm on}\  \delta \Omega $$
 to
@@ -216,7 +216,7 @@ md.add_Dirichlet_condition_with_multipliers(mim, 'u', elements_degree - 1, OUTER
 
 +++
 
-### 🏃 Solve $u$
+### @emoji[feet] Solve $u$
 
 $$[K] \left\\{ u \right\\} = \left\\{ F \right\\}$$
 
@@ -229,7 +229,7 @@ mfu.export_to_vtk(vtkfilename, mfu, U, 'Displacement')
 
 +++
 
-### 🎉 variable ***u***
+### @emoji[confetti_ball] variable ***u***
 
 ![solution1](solution1.png)
 
@@ -257,7 +257,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 
-### 🎉 Error
+### @emoji[confetti_ball] Error
 
 ![error1](error1.png)
 
@@ -289,7 +289,7 @@ Houbolt scheme
 - @emoji[white_check_mark]Development
 - @emoji[white_check_mark]Summary
 
-@size[2.0em](🏃) source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
+@size[2.0em](@emoji[feet]) source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
 
 +++
 
@@ -312,4 +312,4 @@ mlab.clf()
 
 +++
 
-### Thank you @size[2.0em](🙇)
+### Thank you @size[2.0em](@emoji[bow])

@@ -7,7 +7,7 @@
 
 ### Who am I? Abount @tkoyama010 @emoji[heart_eyes]
 
-- @fab[github] @fab[twitter] [@tkoyama010](https://twitter.com/tkoyama010)
+- @fab[github] @color[blue](@fab[twitter]) [@tkoyama010](https://twitter.com/tkoyama010)
 - career: Numerical analysis
 - skills: Fortran, Python, C++, VBScript etc
 

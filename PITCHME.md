@@ -273,8 +273,7 @@ mass brick
 +++
 @snap[west span-60]
 ### @emoji[construction] Development @emoji[construction]
-lumped mass brick for first order
-@emoji[new]
+lumped mass brick @emoji[new]
 @snapend
 
 @snap[east span-40]

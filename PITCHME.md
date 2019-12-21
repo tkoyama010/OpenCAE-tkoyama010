@@ -269,16 +269,18 @@ mass brick
 
 @snap[east span-40]
 @uml[span-100 bg-white](mass_brick.puml)
+@snapend
 
 +++
 @snap[west span-60]
 ### @emoji[construction] Development @emoji[construction]
 lumped mass brick @emoji[new]
-![lumped_mass](lumped_mass.png)
 @snapend
 
 @snap[east span-40]
 @uml[span-100 bg-white](lumped_mass_brick.puml)
+![lumped_mass](lumped_mass.png)
+@snapend
 
 +++
 @snap[west span-60]
@@ -288,16 +290,18 @@ Newmark scheme
 
 @snap[east span-40]
 @uml[span-100 bg-white](newmark.puml)
+@snapend
 
 +++
 @snap[west span-60]
 ### @emoji[construction] Development @emoji[construction]
 Houbolt scheme @emoji[new]
-![houbolt](houbolt.png)
 @snapend
 
 @snap[east span-40]
 @uml[span-100 bg-white](houbolt.puml)
+![houbolt](houbolt.png)
+@snapend
 
 +++
 

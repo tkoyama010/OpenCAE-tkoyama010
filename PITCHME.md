@@ -19,7 +19,7 @@
 - @emoji[gift] Add two object.
   - @emoji[construction]lumped mass brick object@emoji[construction]
   - @emoji[construction]Houbolt method objects@emoji[construction]
-- @emoji[star][contributing status](https://github.com/getfem-doc/getfem/graphs/contributors) my first goal is 100 commits.
+- @emoji[rocket][contributing status](https://github.com/getfem-doc/getfem/graphs/contributors) my first goal is 100 commits.
 
 +++
 

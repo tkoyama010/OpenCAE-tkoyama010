@@ -263,7 +263,7 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 
 +++
 @snap[west span-60]
-### 🚧 Development 🚧
+### @emoji[construction] Development @emoji[construction]
 lumped mass brick for first order
 @snapend
 
@@ -272,7 +272,7 @@ lumped mass brick for first order
 
 +++
 @snap[west span-60]
-### 🚧 Development 🚧
+### @emoji[construction] Development @emoji[construction]
 Houbolt scheme
 @snapend
 
@@ -283,11 +283,11 @@ Houbolt scheme
 
 ### Summary
 
-- ✅Overview
-- ✅Installation
-- ✅Tutorial
-- ✅Development
-- ✅Summary
+- @emoji[white_check_mark]Overview
+- @emoji[white_check_mark]Installation
+- @emoji[white_check_mark]Tutorial
+- @emoji[white_check_mark]Development
+- @emoji[white_check_mark]Summary
 
 @size[2.0em](🏃) source code of [tutorial](https://github.com/tkoyama010/techbookfest-getfem/blob/master/doc/sphinx/source/unit-disk.ipynb).
 

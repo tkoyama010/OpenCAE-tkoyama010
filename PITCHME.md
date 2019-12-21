@@ -264,7 +264,17 @@ mfu.export_to_vtk(vtkfilename, mfu, sol, 'solution')
 +++
 @snap[west span-60]
 ### @emoji[construction] Development @emoji[construction]
+mass brick
+@snapend
+
+@snap[east span-40]
+@uml[span-100 bg-white](mass_brick.puml)
+
++++
+@snap[west span-60]
+### @emoji[construction] Development @emoji[construction]
 lumped mass brick for first order
+@emoji[new]
 @snapend
 
 @snap[east span-40]
@@ -273,7 +283,17 @@ lumped mass brick for first order
 +++
 @snap[west span-60]
 ### @emoji[construction] Development @emoji[construction]
+Newmark scheme
+@snapend
+
+@snap[east span-40]
+@uml[span-100 bg-white](newmark.puml)
+
++++
+@snap[west span-60]
+### @emoji[construction] Development @emoji[construction]
 Houbolt scheme
+@emoji[new]
 @snapend
 
 @snap[east span-40]

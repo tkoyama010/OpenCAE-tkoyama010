@@ -274,6 +274,7 @@ mass brick
 @snap[west span-60]
 ### @emoji[construction] Development @emoji[construction]
 lumped mass brick @emoji[new]
+![lumped_mass](lumped_mass.png)
 @snapend
 
 @snap[east span-40]
@@ -291,8 +292,8 @@ Newmark scheme
 +++
 @snap[west span-60]
 ### @emoji[construction] Development @emoji[construction]
-Houbolt scheme
-@emoji[new]
+Houbolt scheme @emoji[new]
+![houbolt](houbolt.png)
 @snapend
 
 @snap[east span-40]

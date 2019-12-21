@@ -1,0 +1,7 @@
+@startuml
+virtual_time_scheme <|-- Newmark_scheme
+
+Newmark_scheme : init_affine_dependent_variables()
+Newmark_scheme : init_affine_dependent_variables_precomputation()
+Newmark_scheme : time_derivative_to_be_initialized()
+@enduml
